@@ -1,0 +1,27 @@
+*{
+        margin: 0;
+        padding: 0;
+        border: 0;
+}
+html{
+        font-size: 100%;
+}
+.grid{
+        width: 1200px;
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
+}
+.divtrai{
+        width: 20%;
+        height: 100%;
+        background-color: #7dd6f1;
+        margin-right: 20px;
+}
+.avatar_img{
+        width: 100%;
+}
+.divphai{
+        width: 80%;
+        height: 100%;
+}
