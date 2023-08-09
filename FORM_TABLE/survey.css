@@ -1,0 +1,16 @@
+.word{
+    font-weight: 1000;
+}
+.grey{
+background-color: gray;
+}
+.white{
+background-color: white;
+}
+table, tr, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.btn   {
+    border-radius: 10%;
+}

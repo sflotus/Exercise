@@ -1,0 +1,34 @@
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+
+}
+.heading1{
+    background-color: red;
+    color: white;
+    text-align: center;
+    border: 2px solid white;
+}
+.content1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.title1{
+    color:rgb(9, 36, 172);
+    text-align: right;
+}
+.box_text1{
+    border: 2px solid;
+    box-shadow: 1px #888888;
+}
+.btn1{
+    background-color: gray;
+    border: 1px solid black;
+}

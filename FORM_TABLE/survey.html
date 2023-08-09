@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+    <div>
+        <form action="#">
+            <label for="age" class="word">What is your age range</label> <br>
+            <select style="width: 400px;">
+                <option value="">18-24</option>
+                <option value="">25-34</option>
+                <option value="">35-50</option>
+                <option value="">50+</option>
+            </select><br>
+            <label for="yi" class="word">What is your yearly income range?            </label><br>
+            <select style="width: 400px;">
+                <option value="">$0-$25,000</option>
+                <option value="">$25,001-$50,000</option>
+                <option value="">$50,001-$100,000</option>
+                <option value="">$100,000+</option>
+            </select><br>
+            <label for="" class="word">Gender Identity</label><br>
+            <input type="radio" class="GI" checked>Male <br>
+            <input type="radio" class="GI">Female <br>
+            <input type="radio" class="GI">Nonbinary <br>
+            <input type="radio" class="GI">Other <br>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <input type="text"> <br>
+            <label for="" class="word">Which of the following products have your purchased in the last 2 months. Please check all that apply.</label><br>
+            <input type="checkbox"> Product 1 <br>
+            <input type="checkbox"> Product 2 <br>
+            <input type="checkbox"> Product 3 <br>
+            <label for="" class="word">How often would you use our new product?<br></label>
+            <input type="radio" checked> Daily <br>
+            <input type="radio"> Weekly <br>
+            <input type="radio"> Monthly <br>
+            <label for="" class="word">What would you pay for the new product?</label> <br>
+            $ <input type="number" style="width: 50px;">. <input type="number" style="width: 20px;"><br>
+            <label > <span></span>&nbsp;&nbsp;Dolars&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cent</label><br>
+            <label for="11">what features would you like to see in the new product</label><br>
+            <textarea class="11" style="width: 400px; height: 60px;"></textarea><br>
+            <label for="" class="word">Please rate your level of agreement with the following statements</label><br>
+            <table style="text-align: center;">
+                <tr>
+                    <td class="grey"></td>
+                    <td class="grey" style="width: 150px;">Strongy Disagree</td>
+                    <td class="grey" style="width: 150px;">Disagree</td>
+                    <td class="grey" style="width: 150px;">Agree</td>
+                </tr>
+                <tr>
+                    <td class="white" style="text-align:left;"><strong>Our poroducts are priced fairy</strong></td>
+                    <td class="white">
+                        <input type="radio" class="tb1"><br>1
+                    </td>
+                    <td class="white">
+                        <input type="radio" class="tb1"><br>2
+                    </td>
+                    <td class="white">
+                        <input type="radio" class="tb1"><br>3
+                    </td>
+                </tr>
+                <tr>
+                    <td class="grey" style="text-align:left;"><strong>Our poroducts are high quality</strong></td>
+                    <td class="grey">
+                        <input type="radio" class="tb1"><br>1
+                    </td>
+                    <td class="grey">
+                        <input type="radio" class="tb1"><br>2
+                    </td>
+                    <td class="grey">
+                        <input type="radio" class="tb1"><br>3
+                    </td>
+                </tr>
+                <tr>
+                    <td class="white" style="text-align:left;"><strong>You would recommend our product to a friend or <br> coworker</strong></td>
+                    <td class="white">
+                        <input type="radio" class="tb1"><br>1
+                    </td>
+                    <td class="white">
+                        <input type="radio" class="tb1"><br>2
+                    </td>
+                    <td class="white">
+                        <input type="radio" class="tb1"><br>3
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit" value="Submit" class="btn">
+        </form>
+    </div>
+</body>
+</html>
