@@ -13,6 +13,7 @@ table, tr, td{
 }
 td{
     width: 150px;
+    background-color: #f7f7f7;
 }
 .day{
     background-color: #fefb00;

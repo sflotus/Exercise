@@ -1,0 +1,40 @@
+.grid2{
+    width: 600px;
+    max-width: 100%;
+    margin: 20px auto;
+    display: flex;
+}
+.table2{
+   border-collapse: collapse;
+    /* width: 100px; */
+    text-align: center;
+}
+td{
+    width: 50px;
+}
+.tbody2 tr td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.thead2 tr td{
+    border: none;
+}
+.orange{
+    background-color: orange;
+    color:white;
+}
+sub{
+    font-size: 10px;
+}
+.CN{
+    color: red;
+}
+.CN sub{
+    color: black;
+}
+.T7{
+    color: blue;
+}
+.T7 sub{
+    color: black;
+}
