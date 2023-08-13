@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính</title>
+</head>
+<body>
+    <div class="grid">
+    <form action="">
+        <input type="number" name="soA" id="soA" placeholder="Nhập số thứ nhất">
+        <input type="number" name="soB" id="soB" placeholder="Nhập số thứ hai">
+        <br>
+        <!-- <input type="button" value="Addition(+)" onclick="add()">
+        <input type="button" value="Subtraction(-)" onclick="sub()">
+        <input type="button" value="Multiplication(X)" onclick="mul()">
+        <input type="button" value="Division(/)" onclick="div()"> -->
+        <input type="button" name="" id="" value="Addition(+)" onclick="add()">
+        <input type="button" name="" id="" value="Subtraction(-)" onclick="sub()">
+        <input type="button" name="" id="" value="Multiplication(X)" onclick="mul()">
+        <input type="button" name="" id="" value="Division(/)" onclick="div()">
+        <!-- tại sao đặt name và id vào thì lại k chạy ? -->
+        <br>
+        <h3>Result:</h3>
+        <p id="KQ">Đây là kết quả</p>
+    </form>
+    <script>
+        function add(){
+            var  A = parseInt(document.getElementById("soA").value);
+            var B = parseInt(document.getElementById("soB").value);
+            var C = A+B;
+            document.getElementById("KQ").innerHTML = C;
+        }
+        function sub(){
+            var  A = parseInt(document.getElementById("soA").value);
+            var B = parseInt(document.getElementById("soB").value);
+            var C = A-B;
+            document.getElementById("KQ").innerHTML = C;
+        }
+        function mul(){
+            var  A = parseInt(document.getElementById("soA").value);
+            var B = parseInt(document.getElementById("soB").value);
+            var C = A*B;
+            document.getElementById("KQ").innerHTML = C;
+        }function div(){
+            var  A = parseInt(document.getElementById("soA").value);
+            var B = parseInt(document.getElementById("soB").value);
+            var C = A/B;
+            document.getElementById("KQ").innerHTML = C;
+        }
+        // 1 hàm cho 4 phép tính
+        function cal(){
+            var  A = parseInt(document.getElementById("soA").value);
+            var B = parseInt(document.getElementById("soB").value);
+        }
+    </script>
+</body>
+</html>
