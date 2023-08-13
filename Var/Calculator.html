@@ -15,44 +15,55 @@
         <input type="button" value="Subtraction(-)" onclick="sub()">
         <input type="button" value="Multiplication(X)" onclick="mul()">
         <input type="button" value="Division(/)" onclick="div()"> -->
-        <input type="button" name="" id="" value="Addition(+)" onclick="add()">
-        <input type="button" name="" id="" value="Subtraction(-)" onclick="sub()">
-        <input type="button" name="" id="" value="Multiplication(X)" onclick="mul()">
-        <input type="button" name="" id="" value="Division(/)" onclick="div()">
-        <!-- tại sao đặt name và id vào thì lại k chạy ? -->
+        <input type="button" name="btn" id="Addition" value="Addition(+)" onclick="add()">
+        <input type="button" name="btn" id="Subtraction" value="Subtraction(-)" onclick="sub()">
+        <input type="button" name="btn" id="Multiplication" value="Multiplication(X)" onclick="mul()">
+        <input type="button" name="btn" id="Division" value="Division(/)" onclick="div()">
+        <!-- tại sao đặt name và id trùng tên vs fuction  thì lại k chạy ? -->
+        <!-- <button name="btn" onclick="add()">Addition(+)</button>
+        <button name="btn" onclick="sub()">Subtraction(-)</button>
+        <button name="btn" onclick="mul()">Multiplication(X)</button>
+        <button name="btn" onclick="div()">Division(/)</button>
+        <br> -->
         <br>
         <h3>Result:</h3>
         <p id="KQ">Đây là kết quả</p>
     </form>
     <script>
+        var A, B, C;
+        // A = parseInt(document.getElementById("soA").value);
+        // B = parseInt(document.getElementById("soB").value);
+        // C = A + B;
         function add(){
-            var  A = parseInt(document.getElementById("soA").value);
-            var B = parseInt(document.getElementById("soB").value);
-            var C = A+B;
+            A = parseInt(document.getElementById("soA").value);
+            B = parseInt(document.getElementById("soB").value);
+            C = A + B;          
             document.getElementById("KQ").innerHTML = C;
         }
         function sub(){
-            var  A = parseInt(document.getElementById("soA").value);
-            var B = parseInt(document.getElementById("soB").value);
-            var C = A-B;
+            A = parseInt(document.getElementById("soA").value);
+            B = parseInt(document.getElementById("soB").value);
+            C = A-B;
             document.getElementById("KQ").innerHTML = C;
         }
         function mul(){
-            var  A = parseInt(document.getElementById("soA").value);
-            var B = parseInt(document.getElementById("soB").value);
-            var C = A*B;
+            A = parseInt(document.getElementById("soA").value);
+            B = parseInt(document.getElementById("soB").value);
+            C = A*B;
             document.getElementById("KQ").innerHTML = C;
         }function div(){
-            var  A = parseInt(document.getElementById("soA").value);
-            var B = parseInt(document.getElementById("soB").value);
-            var C = A/B;
+            A = parseInt(document.getElementById("soA").value);
+            B = parseInt(document.getElementById("soB").value);
+            C = A/B;
             document.getElementById("KQ").innerHTML = C;
         }
         // 1 hàm cho 4 phép tính
-        function cal(){
-            var  A = parseInt(document.getElementById("soA").value);
-            var B = parseInt(document.getElementById("soB").value);
-        }
+        // function cal(){
+        //     A = parseInt(document.getElementById("soA").value);
+        //     B = parseInt(document.getElementById("soB").value);
+        //     var name=document.getElementsByName("btn").value;
+        //     if(name ==)
+        // }
     </script>
 </body>
 </html>
