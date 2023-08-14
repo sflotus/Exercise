@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi nhiệt độ</title>
+</head>
+<body>
+    <div>
+        <form action="#">
+        <h2>Trung bình môn</h2>
+            <table>
+                <tr>
+                    <td><span>Nhập điểm vật lý:</span></td>
+                    <td>
+                        <input type="number" name="physic" id="physic">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Nhập điểm hoá học:</span>
+                    </td>
+                    <td>
+                        <input type="number" name="chemistry" id="chemistry">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Nhập điểm sinh học:</span>
+                    </td>
+                    <td>
+                        <input type="number" name="biology" id="biology">
+                    </td>
+                </tr>                
+            </table>
+            <input type="button" name="" id="" onclick="sum()" value="Tính trung bình">
+            <p id="kq1"></p>
+        </form>
+    </div>
+    <div>
+        <h2>Chuyển đổi nhiệt độ</h2>
+        <input type="number" placeholder="Độ C (Celsius)" id="temper_C">
+        <button value="Nhập" onclick="ChangeTemper()">Chuyển đổi</button>
+        <p id="kq2"></p>
+    </div>
+    <div>
+        <h2>Tính diện tích và chu vi hình tròn</h2>
+        <span>Nhập vào bán kính R(cm) :</span>
+        <input type="number" name="bankinh" id="bankinh">
+        <input type="button" value="Tính" onclick="tinh()" name="" id="" style="width: 100px;">
+        <p id="chuvi"></p>
+        <p id="dientich"></p>
+    </div>
+    <script>
+        var chem, phy, bio;
+        var A;
+        var B;
+        var R;
+        function sum(){
+            mal=parseInt(document.getElementById("physic").value);
+            phy=parseInt(document.getElementById("chemistry").value);
+            bio=parseInt(document.getElementById("biology").value);
+            document.getElementById("kq1").innerHTML="Điểm trung bình 3 môn: " + ((mal+phy+bio)/3)
+        }
+        function ChangeTemper(){
+            A = parseInt(document.getElementById("temper_C").value);
+            B = (9*A)/5 + 32;
+            document.getElementById("kq2").innerHTML="Result: " + B;
+        }
+        function tinh(){
+            R=parseInt(document.getElementById("bankinh").value);
+            document.getElementById("chuvi").innerHTML="Chu vi hình tròn là: " + 3.14*2*R +" cm";
+            document.getElementById("dientich").innerHTML="Diện tích hình tròn là: "+ 3.14*R*R +" <span>cm<sup>2</sup></span>";
+        }
+    </script>
+</body>
+</html>
