@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Tính chỉ số cân nặng</h2>
+        <form action="#">   
+            <table>
+                <tr>
+                    <td>
+                        Nhập cân nặng: (kg)
+                    </td>
+                    <td>
+                        <input type="number" name="weight" id="weight">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Nhập chiều cao: (m)
+                    </td>
+                    <td>
+                        <input type="number" name="height" id="height">
+                    </td>
+                </tr>
+            </table>
+            <input type="button" name="btn" id="" onclick="cal()" value="Tính BMI">
+        </form>
+        <p id="bmi"></p>
+    </div>
+    <script>
+        var weight, height;
+        function cal(){
+            weight=parseInt(document.getElementById("weight").value);
+            height=parseInt(document.getElementById("height").value);
+            var bmi = weight/(height**2);
+            if (bmi<18.5){
+                document.getElementById("bmi").innerHTML="Your BMI is: " +bmi+"<br> Your are Underweight";
+            }  else if (bmi<25.0){
+                    document.getElementById("bmi").innerHTML="Your BMI is: " +bmi+"<br> Your are Normal";
+                    }
+                    else if (bmi<30){
+                    document.getElementById("bmi").innerHTML="Your BMI is: " +bmi+"<br> Your are Overweight";
+                }
+            else
+                document.getElementById("bmi").innerHTML="Your BMI is: " +bmi+"<br> Your are Obese";
+                
+        }
+    </script>
+</body>
+</html>
