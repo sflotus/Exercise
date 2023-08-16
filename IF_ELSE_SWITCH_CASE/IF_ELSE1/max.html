@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <td>Nhập số A:</td>
+                <td><input type="number" name="" id="soA"></td>
+            </tr>
+            <tr>
+                <td>Nhập số B:</td>
+                <td><input type="number" name="" id="soB"></td>
+            </tr><tr>
+                <td>Nhập số C:</td>
+                <td><input type="number" name="" id="soC"></td>
+            </tr>
+        </table>
+        <input type="button" name="" id="" value="Tìm Max" onclick="check()">
+    </form>
+    <p id="result"></p>
+    <script>
+     function cal(){
+        let so_a=parseInt(document.getElementById("soA").value)
+        let so_b=parseInt(document.getElementById("soB").value)
+        let so_c=parseInt(document.getElementById("soC").value)
+        document.getElementById("result").innerHTML="Số lớn nhất là: " +Math.max(so_a,so_b,so_c)
+     }
+    </script>
+</body>
+</html>

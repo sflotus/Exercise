@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h2>Kiểm tra số nguyên</h2>
+        <label for="soTuoi">Nhập số A:</label>
+        <input type="number" name="" id="soA">
+        <br>
+        <input type="button" name="" id="" value="Kiểm tra" onclick="cal()">
+        <p id="result"></p>
+    </form>
+    <script>
+        function cal(){
+            let so_a=parseInt(document.getElementById("soA").value);
+            so_a >= 0 ? document.getElementById("result").innerHTML="<strong>Số A là số nguyên</strong>" : document.getElementById("result").innerHTML="<strong>Số A không phải là số nguyên</strong>"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <form action="">
+            <table>
+                <tr>
+                    <td>Nhập số A:</td>
+                    <td><input type="number" name="" id="soA"></td>
+                </tr>
+                <tr>
+                    <td>Nhập số B:</td>
+                    <td><input type="number" name="" id="soB"></td>
+                </tr>
+            </table>
+            <input type="button" name="" id="" value="Kiểm Tra" onclick="cal()">
+            <p id="result"></p>
+        </form>
+    </div>
+    <script>
+        
+        function cal(){
+            let A=parseInt(document.getElementById("soA").value);
+            let B=parseInt(document.getElementById("soB").value);
+            console.log(A +" "+B);
+            // if((A%B)==0){
+            //     document.getElementById("result").innerHTML="A chia hết cho B";
+            // } 
+            //     else{
+            //         document.getElementById("result").innerHTML="A không chia hết cho B";
+            //     }
+            (A%B)==0? document.getElementById("result").innerHTML="A chia hết cho B":document.getElementById("result").innerHTML="A không hết cho B"
+
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 3px solid black;
+        }
+        
+        input{
+            width: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <form action="">
+            <table>
+                <tr>
+                    <td colspan="4"><input type="text" id="result" style="width: 200px;"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" name="" id="" value="1" onclick="add(this.value)"></td>
+                    <td><input type="button" name="" id="" value="2" onclick="add(this.value)"></td>
+                    <td><input type="button" name="" id="" value="3" onclick="add(this.value)"></td>
+                    <td><input type="button" name="" id="" value="+" onclick="add(this.value)"></td>
+                                    
+                </tr>
+                 <tr>
+                    <td><input type="button" name="" id="" value="4" onclick="add(this.value)"></td>
+                    <td><input type="button" name="" id="" value="5" onclick="add(this.value)"></td>
+                    <td><input type="button" name="" id="" value="6" onclick="add(this.value)"></td>
+                    <td><input type="button" name="" id="" value="-" onclick="add(this.value)"></td>                 
+                </tr>
+                <tr>
+                    <td><input type="button" name="" id="" value="7" onclick="add(this.value)"></td>
+                    <td><input type="button" name="" id="" value="8" onclick="add(this.value)"></td>
+                    <td><input type="button" name="" id="" value="9" onclick="add(this.value)"></td>
+                    <td><input type="button" name="" id="" value="*" onclick="add(this.value)"></td>                  
+                </tr><tr>
+                    <td><input type="button" name="" id="" value="C" onclick="resetA()"></td>
+                    <td><input type="button" name="" id="" value="0" onclick="add(this.value)"></td>
+                    <td><input type="button" name="" id="" value="=" onclick="cal()"></td>
+                    <td><input type="button" name="" id="" value="/" onclick="add(this.value)"></td>                   
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        let valueCur ="";
+        function add(a){
+            // let valueCur ="";
+            // console.log(valueCur);
+            valueCur += a;
+            document.getElementById("result").value = valueCur;
+        }
+        function cal(){
+            var calValue=eval(valueCur);
+            valueCur=calValue;
+            document.getElementById("result").value = calValue;
+            valueCur="";
+
+        }
+        function resetA(){
+            console.log(valueCur);
+            valueCur="";
+            document.getElementById("result").value = valueCur;
+            console.log(valueCur);
+        }
+    </script>
+</body>
+</html>
