@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h2>Giải phương trình bậc 2</h2>
+        <p>Phương trình bậc 2 có dạng: aX<sup>2</sup>+bX + c =0</p>
+        <table>
+            <tr>
+                <td>
+                    Nhập số a:
+                </td>
+                <td>
+                    <input type="number" name="" id="soA">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nhập số b:
+                </td>
+                <td>
+                    <input type="number" name="" id="soB">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nhập số c:
+                </td>
+                <td>
+                    <input type="number" name="" id="soC">
+                </td>
+            </tr>
+        </table>
+        <input type="button" name="" id="" value="Giải phương trình" onclick="cal()">
+        <p id="result"></p>
+        <script>
+            function cal(){
+            let so_a=parseInt(document.getElementById("soA").value)
+            let so_b=parseInt(document.getElementById("soB").value)
+            let so_c=parseInt(document.getElementById("soC").value)
+            if (so_a=="0")
+                {
+                    if (so_b=="0"){
+                            if (so_c=="0")
+                            {
+                            document.getElementById("result").innerHTML="Phương trình có vô số nghiệm";
+                            } else  document.getElementById("result").innerHTML="Phương trình vô nghiệm ";
+                                } 
+                    else 
+                    document.getElementById("result").innerHTML="Phương trình có 1 nghiệm "+ (-1*so_c/so_b);
+                } else 
+                    {
+                        let _delta = so_b*so_b-(4*so_a*so_c);
+                        let _x1=(-so_b + Math.sqrt(_delta))/(2*so_a);
+                        let _x2=(-so_b - Math.sqrt(_delta))/(2*so_a);  
+                        console.log(_delta,_x1,_x2);
+                        if (_delta < 0)
+                            {
+                             document.getElementById("result").innerHTML="Phương trình vô nghiệm";
+                            } 
+                        else if (_delta = 0)
+                        {
+                        document.getElementById("result").innerHTML="Phương trình có 1 nghiệm X<sub>1</sub> = X<sub>2</sub> = "+(-1*(so_b/(2*so_a)));
+                        } else {                                                 
+                             document.getElementById("result").innerHTML="Phương trình 2 nghiệm phân biệt <br> X<sub>1</sub>= "+_x1+"<br>X<sub>2</sub>="+_x2;
+                            }
+                    }
+        }
+        </script>
+    </form>
+</body>
+</html>

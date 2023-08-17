@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+    <h2>Tính diện tích hình  chữ nhật</h2>
+    <label for="soA">Nhập độ dài cạnh a(m):</label>
+    <input type="number" name="" id="soA"><br>
+    <label for="soB">Nhập độ dài cạnh b(m):</label>
+    <input type="number" name="" id="soB">
+    <br>
+    <input type="button" name="" id="" value="Tính diện tích" onclick="cal()">
+    <p id="result"></p>
+    </form>
+    <script>
+        function cal(){
+            let so_a=parseInt(document.getElementById("soA").value)
+            let so_b=parseInt(document.getElementById("soB").value)
+            document.getElementById("result").innerHTML="Diện tích hình chử nhật là "+ so_a*so_b + " M<sup>2</sup>";
+        }
+    </script>
+</body>
+</html>

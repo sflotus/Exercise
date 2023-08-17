@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Xếp hạng học lực của học sinh</h2>
+    <form action="">
+        <table>
+            <tr>
+                <td>
+                    Nhập điểm kiểm tra (20%):
+                </td>
+                <td>
+                    <input type="number" name="" id="test" min="0" max="10">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nhập điểm giữa kỳ (20%):
+                </td>
+                <td>
+                    <input type="number" name="" id="mid" min="0" max="10">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nhập điểm cuối kỳ (60%):
+                </td>
+                <td>
+                    <input type="number" name="" id="final" min="0" max="10">
+                </td>
+            </tr>
+        </table>
+        <input type="button" name="btn" id="" onclick="rank()" value="Xếp hạng">
+        <br>
+        <p id="result"></p>
+    </form>
+    <script>
+        function rank(){
+            let diem_kt = parseInt(document.getElementById("test").value);
+            let diem_mid = parseInt(document.getElementById("mid").value);
+            let diem_final = parseInt(document.getElementById("final").value);
+            console.log(diem_kt,diem_mid,diem_final);
+            let diem_tb =diem_kt*0.2+diem_mid*0.2+diem_final*0.6
+            if (diem_tb <4){
+                document.getElementById("result").innerHTML="Điểm trung bình:" +diem_tb+" <br>Xếp hạng: F";
+            }
+                else if (diem_tb < 5.5){
+                         document.getElementById("result").innerHTML="Điểm trung bình:" +diem_tb+" <br>Xếp hạng: D";
+                }   else if (diem_tb < 6.5){
+                        document.getElementById("result").innerHTML="Điểm trung bình:" +diem_tb+" <br>Xếp hạng: C";
+                    }
+                    else if (diem_tb < 8){
+                        document.getElementById("result").innerHTML="Điểm trung bình:" +diem_tb+" <br>Xếp hạng: B";
+                    }
+                    else document.getElementById("result").innerHTML="Điểm trung bình:" +diem_tb+" <br>Xếp hạng: A";               
+                }
+    </script>
+</body>
+</html>

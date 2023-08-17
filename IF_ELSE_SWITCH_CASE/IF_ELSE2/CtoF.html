@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h2>Chuyển từ độ C sang độ F</h2>
+        <label for="soTuoi">Nhập độ C:</label>
+        <input type="number" name="" id="fromC">
+        <br>
+        <input type="button" name="" id="" value="Chuyển đổi" onclick="cal()">
+        <p id="result"></p>
+    </form>
+    <script>
+        function cal(){
+            let fC=parseInt(document.getElementById("fromC").value)
+            document.getElementById("result").innerHTML="Độ F: "+(fC*9/5+32);
+        }
+    </script>
+</body>
+</html>

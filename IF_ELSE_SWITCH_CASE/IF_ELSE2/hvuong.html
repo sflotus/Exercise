@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h2>Tính điện tích hình vuông</h2>
+        <label for="soA">Nhập độ dài cạnh (m):</label>
+        <input type="number" name="" id="soA">
+        <br>
+        <input type="button" name="" id="" value="Tính diện tích" onclick="cal()">
+        <p id="result"></p>
+    </form>
+    <script>
+        function cal(){
+            let so_a=parseInt(document.getElementById("soA").value)
+            document.getElementById("result").innerHTML="Diện tích hình vuông là "+ so_a*so_a + " M<sup>2</sup>";
+        }
+    </script>
+</body>
+</html>

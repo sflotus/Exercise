@@ -20,15 +20,17 @@
                 <td><input type="number" name="" id="soC"></td>
             </tr>
         </table>
-        <input type="button" name="" id="" value="Tìm Max" onclick="check()">
+        <input type="button" name="" id="" value="Tìm Max" onclick="cal()">
     </form>
     <p id="result"></p>
     <script>
      function cal(){
-        let so_a=parseInt(document.getElementById("soA").value)
-        let so_b=parseInt(document.getElementById("soB").value)
-        let so_c=parseInt(document.getElementById("soC").value)
-        document.getElementById("result").innerHTML="Số lớn nhất là: " +Math.max(so_a,so_b,so_c)
+        let so_a=parseInt(document.getElementById("soA").value);
+        let so_b=parseInt(document.getElementById("soB").value);
+        let so_c=parseInt(document.getElementById("soC").value);
+        let so_max=Math.max(so_a,so_b,so_c);
+        console.log(so_max);
+        document.getElementById("result").innerHTML="Số lớn nhất là: " +so_max;
      }
     </script>
 </body>

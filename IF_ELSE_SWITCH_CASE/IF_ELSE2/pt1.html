@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h2>Giải phương trình bậc 1</h2>
+        <p>Phương trình bậc 1 có dạng: aX+m=b</p>
+        <table>
+            <tr>
+                <td>
+                    Nhập số a:
+                </td>
+                <td>
+                    <input type="number" name="" id="soA">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nhập số b:
+                </td>
+                <td>
+                    <input type="number" name="" id="soB">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nhập số m:
+                </td>
+                <td>
+                    <input type="number" name="" id="soM">
+                </td>
+            </tr>
+        </table>
+        <input type="button" name="" id="" value="Tìm X" onclick="cal()">
+        <p id="result"></p>
+    </form>
+    <script>
+        function cal(){
+            let so_a=parseInt(document.getElementById("soA").value)
+            let so_b=parseInt(document.getElementById("soB").value)
+            let so_m=parseInt(document.getElementById("soM").value)
+            document.getElementById("result").innerHTML="X = "+ ((so_b-so_m)/so_a);
+        }
+    </script>
+</body>
+</html>

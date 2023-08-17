@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h2>Tính cước điện thoại</h2>
+        <p>Giá cước:</p>
+        <ul>
+            <li>Dưới 60 phút: 800đ</li>
+            <li>Từ phút thứ 60-119 phút: 900đ</li>
+            <li>Từ phút thứ 120-179 phút: 1000đ</li>
+            <li>Từ phút thứ 180-239 phút: 1200đ</li>
+            <li>Từ phút thứ 240 phút trở lên: 1500đ </li>
+        </ul>
+        <table>
+            <tr>
+                <td>
+                    Nhập vào số phút đã gọi:
+                </td>
+                <td>
+                    <input type="number" name="" id="time">
+                </td>
+            </tr>           
+        </table>
+        <input type="button" name="" id="" value="Tính cước" onclick="cal()">
+    </form>
+    <p id="result"></p>
+    <script>
+        var so_phut;
+        var cuoc_dt;
+        function cal(){
+            so_phut =parseInt(document.getElementById("time").value);
+            if (so_phut <60) {
+                cuoc_dt = so_phut*800;
+                document.getElementById("result").innerHTML="Tiền cước điện thoại trong tháng: " +cuoc_dt+" VND";
+                } else if (so_phut <120) {
+                    cuoc_dt = (so_phut-60)*900+60*800;
+                    document.getElementById("result").innerHTML="Tiền cước điện thoại trong tháng: " +cuoc_dt+" VND";
+                    } else if (so_phut <180) {
+                        cuoc_dt = (so_phut-120)*1000+60*800+60*900;
+                        document.getElementById("result").innerHTML="Tiền cước điện thoại trong tháng: " +cuoc_dt+" VND";
+                        } else if (so_phut <240) {
+                            cuoc_dt = (so_phut-180)*1200+60*800+60*900+60*1000;
+                            document.getElementById("result").innerHTML="Tiền cước điện thoại trong tháng: " +cuoc_dt+" VND";
+                            } else{
+                                cuoc_dt = 60*800+60*900+60*1000+60*1200+(so_phut-240)*1500;
+                                document.getElementById("result").innerHTML="Tiền cước điện thoại trong tháng: " +cuoc_dt +" VND";
+                                }
+                        }
+    </script>
+</body>
+</html>
