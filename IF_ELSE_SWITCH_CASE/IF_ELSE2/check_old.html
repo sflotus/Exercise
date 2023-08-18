@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h2>Kiểm tra 1 số nhập vào có phải là số tuổi không</h2>
+        <label for="soTuoi">Nhập số cần kiểm tra :</label>
+        <input type="number" name="" id="input_num">
+        <br>
+        <input type="button" name="" id="" value="Kiểm tra" onclick="cal()">
+        <p id="result"></p>
+    </form>
+    <script>
+        function cal(){
+            let inputNum=parseInt(document.getElementById("input_num").value);
+            console.log(inputNum);
+            if(inputNum<=0)
+                {
+                    document.getElementById("result").innerHTML="Vui lòng nhập số lớn hơn 0";
+
+                } else if (inputNum<120)
+                    {
+                        document.getElementById("result").innerHTML="Số nhập vào là tuổi của một người";
+                    } else document.getElementById("result").innerHTML="Số nhập vào lớn hơn số tuổi của một người";
+
+        }
+    </script>
+</body>
+</html>

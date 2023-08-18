@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tình tiền thuế thu nhập cá nhân</h2>
+    <p>Nếu trong 1 năm người lao động có thu nhập lớn hơn 108000000 VND thì phải đóng thuế thu nhập cá nhân là 10%</p>
+    <label for="soA">Nhập thu nhập trong 1 năm:</label>
+        <input type="number" name="" id="soA">
+        <br>
+        <input type="button" name="" id="" value="Tính tiền thuế " onclick="cal()">
+        <p id="result"></p>
+        <script>
+            function cal(){
+                let _money = parseInt(document.getElementById("soA").value);
+                if (_money<108000000){
+                document.getElementById("result").innerHTML="Người lao động không cần phải đóng thuế thu nhập cá nhâ";
+                 } else 
+                    document.getElementById("result").innerHTML="Số tiền người lao động phải đống thuế là: " +(_money*0.1)+" VND";
+            }
+        </script>
+</body>
+</html>

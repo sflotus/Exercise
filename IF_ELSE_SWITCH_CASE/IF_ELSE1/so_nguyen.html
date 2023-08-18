@@ -17,7 +17,10 @@
     <script>
         function cal(){
             let so_a=parseInt(document.getElementById("soA").value);
-            so_a >= 0 ? document.getElementById("result").innerHTML="<strong>Số A là số nguyên</strong>" : document.getElementById("result").innerHTML="<strong>Số A không phải là số nguyên</strong>"
+            if (so_a==0){
+                document.getElementById("result").innerHTML="Số vừa nhập là số 0"
+            } else
+            so_a > 0 ? document.getElementById("result").innerHTML="<strong>Số A là số lớn hơn hợn 0</strong>" : document.getElementById("result").innerHTML="<strong>Số A là số bé hơn 0</strong>"
         }
     </script>
 </body>

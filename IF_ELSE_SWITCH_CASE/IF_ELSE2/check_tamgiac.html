@@ -6,15 +6,48 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>Kiểm tra 3 số nhập vào có phải là 1 cạnh của tam giác không?</h2>
+        <table>
+            <tr>
+                <td>
+                    Nhập số a:
+                </td>
+                <td>
+                    <input type="number" name="" id="soA">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nhập số b:
+                </td>
+                <td>
+                    <input type="number" name="" id="soB">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nhập số c:
+                </td>
+                <td>
+                    <input type="number" name="" id="soC">
+                </td>
+            </tr>
+        </table>
+        <input type="button" name="" id="" value="Kiểm tra" onclick="cal()">
+        <p id="result"></p>
     <script>
-        var a,b,c;
-        a=1;
-        b=1;
-        c=6;
-        if((a>0)&&(b>0)&&(c>0)&&((a+b)>c)&&((a+c)>b)&&((b+c)>a))
+        function cal(){
+        let so_a=parseInt(document.getElementById("soA").value);
+        let so_b=parseInt(document.getElementById("soB").value);
+        let so_c=parseInt(document.getElementById("soC").value);
+        
+        if((so_a>0)&&(so_b>0)&&(so_c>0)&&((so_a+so_b)>so_c)&&((so_a+so_c)>so_b)&&((so_b+so_c)>so_a))
         {
-            console.log("true");
-        } else console.log("fail");
+            document.getElementById("result").innerHTML="các số vừa nhập vào là các cạch của tam giác : <br> Số a: " +so_a+"<br> Số b: "+so_b+"<br> Số c: "+so_c+"<br> ";
+            
+        } else  document.getElementById("result").innerHTML="các số vừa nhập vào không phải là các cạch của tam giác : <br> Số a: " +so_a+"<br> Số b: "+so_b+"<br> Số c: "+so_c+"<br> ";
+        }
+        
     </script>
 </body>
 </html>

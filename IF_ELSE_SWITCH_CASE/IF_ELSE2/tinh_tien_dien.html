@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h2>Tính tiền điện</h2>
+        <table>
+            <tr>
+                <td>Dưới 50 KW/h :</td>
+                <td>2200 VND</td>
+            <tr>
+                <td>Từ số 50-99 KW/h</td>
+                <td>2500 VND</td>
+            </tr>
+            <tr>
+                <td>Từ số 100-199 KW/h:</td>
+                <td>3000 VND</td>
+            </tr>
+            <tr>
+                <td>Từ sô 200 KW/h :</td>
+                <td>4000 VND</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    Nhập số điện tiêu thụ trong tháng:
+                </td>
+                <td>
+                    <input type="number" name="" id="elecNum">
+                </td>
+            </tr>           
+        </table>
+        <input type="button" name="" id="" value="Tính tiền điện" onclick="cal()">
+    </form>
+    <p id="result"></p>
+    <script>
+        function cal(){
+            let elec_num=parseInt(document.getElementById("elecNum").value);
+            let money_elec =0;
+            if (elec_num<50){
+                money_elec=elec_num*2200;
+                document.getElementById("result").innerHTML="Số tiền điện phải trả là : "+money_elec+" VND";
+                
+            } else if (elec_num<100){
+                money_elec=49*2200+(elec_num-49)*2500;
+                document.getElementById("result").innerHTML="Số tiền điện phải trả là : "+money_elec+" VND";
+                
+            } else if (elec_num<200){
+                money_elec=49*2200+50*2500+(elec_num-99)*3000;
+                document.getElementById("result").innerHTML="Số tiền điện phải trả là : "+money_elec+" VND";
+                
+            } else {
+                money_elec=49*2200+50*2500+100*3000+(elec_num-199)*4000;
+                document.getElementById("result").innerHTML="Số tiền điện phải trả là : "+money_elec+" VND";
+            }
+        }
+    </script>
+</body>
+</html>

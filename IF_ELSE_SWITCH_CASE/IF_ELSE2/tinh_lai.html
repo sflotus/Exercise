@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tính lãi kép ngân hàng</h2>
+    <p> Công thức tính lãi kép: A = P*(1 + r)^n</p>
+    <p>Trong đó:</p>
+    <ul>
+        <li>A là số tiền mà quý khách nhận được trong tương lai</li>
+        <li>P là số tiền gốc quý khách bỏ ra để đầu tư ban đầu</li>
+        <li>r là lãi suất hằng năm</li>
+        <li>n là số chu kỳ thực hiện lãi kép</li>
+    </ul>
+    <form action="">
+        <table>
+            <tr>
+                <td>Nhập vào số tiền góc (P):</td>
+                <td><input type="number" name="" id="soP"></td>
+            </tr>
+            <tr>
+                <td>Nhập vào lãi suất hàng năm (r):</td>
+                <td><input type="number" name="" id="sor"></td>
+            </tr>
+            <tr>
+                <td>Nhập vào chu ký thực hiện (n)</td>
+                <td><input type="number" name="" id="son"></td>
+            </tr>
+        </table>
+        <input type="button" name="" id="" value="Tính số tiền" onclick="cal()">
+    <p id="result"></p>
+    </form>
+    <script>
+        function cal(){
+            let so_P=parseInt(document.getElementById("soP").value);
+            let so_r=parseInt(document.getElementById("sor").value)/100;
+            let so_n=parseInt(document.getElementById("son").value);
+            let _money=so_P*Math.pow((1+so_r),so_n);
+            document.getElementById("result").innerHTML="Số tiền lãi là: "+_money+" VND";
+
+        }
+    </script>
+</body>
+</html>
