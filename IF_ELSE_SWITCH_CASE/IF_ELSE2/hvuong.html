@@ -15,9 +15,14 @@
         <p id="result"></p>
     </form>
     <script>
-        function cal(){
+        function cal()
+        {
             let so_a=parseInt(document.getElementById("soA").value)
-            document.getElementById("result").innerHTML="Diện tích hình vuông là "+ so_a*so_a + " M<sup>2</sup>";
+            if(so_a<=0)
+            {
+                document.getElementById("result").innerHTML="Độ dài cạnh không được bằng 0. Vui lòng nhập lại";                    
+            }
+            else document.getElementById("result").innerHTML="Diện tích hình vuông là "+ so_a*so_a + " M<sup>2</sup>";
         }
     </script>
 </body>

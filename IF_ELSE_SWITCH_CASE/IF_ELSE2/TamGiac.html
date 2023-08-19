@@ -16,12 +16,18 @@
         <input type="button" name="" id="" value="Tính diện tích" onclick="cal()">
         <p id="result"></p>
         </form>
-        <script>
-            function cal(){
-                let so_a=parseInt(document.getElementById("soA").value)
-                let so_b=parseInt(document.getElementById("soB").value)
-                document.getElementById("result").innerHTML="Diện tích tam giác vuông là "+ so_a*so_b/2 + " M<sup>2</sup>";
+    <script>
+            function cal()
+        {
+            let so_a=parseInt(document.getElementById("soA").value)
+            let so_b=parseInt(document.getElementById("soB").value)
+            if(so_a<=0||so_b<=0)
+            {
+                document.getElementById("result").innerHTML="Độ dài cạnh không được bằng 0. Vui lòng nhập lại";                    
             }
-        </script>
+            else
+                document.getElementById("result").innerHTML="Diện tích tam giác vuông là "+ so_a*so_b/2 + " M<sup>2</sup>";
+        }
+    </script>
 </body>
 </html>

@@ -14,12 +14,18 @@
         <input type="button" name="" id="" value="Tính tiền thuế " onclick="cal()">
         <p id="result"></p>
         <script>
-            function cal(){
+            function cal()
+            {
                 let _money = parseInt(document.getElementById("soA").value);
-                if (_money<108000000){
+                if(_money<0)
+                {
+                    document.getElementById("result").innerHTML="Giá trị bé hơn 0. Vui lòng nhập lại";                    
+                }
+                else if (_money<108000000)
+                {
                 document.getElementById("result").innerHTML="Người lao động không cần phải đóng thuế thu nhập cá nhâ";
-                 } else 
-                    document.getElementById("result").innerHTML="Số tiền người lao động phải đống thuế là: " +(_money*0.1)+" VND";
+                } 
+                 else document.getElementById("result").innerHTML="Số tiền người lao động phải đống thuế là: " +(_money*0.1)+" VND";
             }
         </script>
 </body>
