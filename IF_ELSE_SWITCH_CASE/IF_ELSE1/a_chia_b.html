@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    </style>
 </head>
 <body>
 
-    <div>
+    <div class="grid">
         <form action="">
             <table>
                 <tr>
@@ -26,8 +28,8 @@
     <script>
         
         function cal(){
-            let A=parseInt(document.getElementById("soA").value);
-            let B=parseInt(document.getElementById("soB").value);
+            let A=parseFloat(document.getElementById("soA").value);
+            let B=parseFloat(document.getElementById("soB").value);
             console.log(A +" "+B);
             // if((A%B)==0){
             //     document.getElementById("result").innerHTML="A chia hết cho B";

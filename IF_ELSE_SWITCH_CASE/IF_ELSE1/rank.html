@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style></style>
 </head>
 <body>
+    <div class="grid"></div>
     <h2> Xếp hạng học lực của học sinh</h2>
     <form action="">
         <table>
@@ -39,25 +41,38 @@
         <p id="result"></p>
     </form>
     <script>
-        function rank(){
-            let diem_kt = parseInt(document.getElementById("test").value);
-            let diem_mid = parseInt(document.getElementById("mid").value);
-            let diem_final = parseInt(document.getElementById("final").value);
+        function rank()
+        {
+            let diem_kt = parseFloat(document.getElementById("test").value);
+            let diem_mid = parseFloat(document.getElementById("mid").value);
+            let diem_final = parseFloat(document.getElementById("final").value);
             console.log(diem_kt,diem_mid,diem_final);
-            let diem_tb =diem_kt*0.2+diem_mid*0.2+diem_final*0.6
-            if (diem_tb <4){
-                document.getElementById("result").innerHTML="Điểm trung bình:" +diem_tb+" <br>Xếp hạng: F";
+            let diem_tb =diem_kt*0.2+diem_mid*0.2+diem_final*0.6;
+            let _rank="";
+            if (diem_final<0||diem_final>10||diem_kt<0||diem_kt>10||diem_mid<0||diem_mid>10)
+            {
+                document.getElementById("result").innerHTML="Vui lòng nhập giá trị từ 0-10"
+            } else 
+            {
+                if (diem_tb <4)
+                        {
+                            _rank ="F";
+                        } else if (diem_tb < 5.5)
+                        {
+                            _rank ="D";
+                        } else if (diem_tb < 6.5)
+                        {
+                        _rank ="C";
+                        }
+                        else if (diem_tb < 8)
+                        {
+                        _rank ="B";
+                        }
+                        else _rank ="A";
+                document.getElementById("result").innerHTML="Điểm trung bình:" +diem_tb+" <br>Xếp hạng: "+_rank;
+                       
             }
-                else if (diem_tb < 5.5){
-                         document.getElementById("result").innerHTML="Điểm trung bình:" +diem_tb+" <br>Xếp hạng: D";
-                }   else if (diem_tb < 6.5){
-                        document.getElementById("result").innerHTML="Điểm trung bình:" +diem_tb+" <br>Xếp hạng: C";
-                    }
-                    else if (diem_tb < 8){
-                        document.getElementById("result").innerHTML="Điểm trung bình:" +diem_tb+" <br>Xếp hạng: B";
-                    }
-                    else document.getElementById("result").innerHTML="Điểm trung bình:" +diem_tb+" <br>Xếp hạng: A";               
-                }
+        }
     </script>
 </body>
 </html>

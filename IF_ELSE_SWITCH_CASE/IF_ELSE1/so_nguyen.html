@@ -15,12 +15,20 @@
         <p id="result"></p>
     </form>
     <script>
-        function cal(){
-            let so_a=parseInt(document.getElementById("soA").value);
-            if (so_a==0){
-                document.getElementById("result").innerHTML="Số vừa nhập là số 0"
-            } else
-            so_a > 0 ? document.getElementById("result").innerHTML="<strong>Số A là số lớn hơn hợn 0</strong>" : document.getElementById("result").innerHTML="<strong>Số A là số bé hơn 0</strong>"
+        function cal()
+        {
+            let so_a=parseFloat(document.getElementById("soA").value);
+            if(Number.isInteger(so_a))
+            {
+                if (so_a==0)
+                {
+                    document.getElementById("result").innerHTML="Số vừa nhập là số 0";
+                } 
+                else
+                {
+                so_a > 0 ? document.getElementById("result").innerHTML="<strong>Số A là số lớn hơn hợn 0</strong>" : document.getElementById("result").innerHTML="<strong>Số A là số bé hơn 0</strong>";
+                }
+            } else document.getElementById("result").innerHTML="Vui lòng nhập số nguyên";
         }
     </script>
 </body>

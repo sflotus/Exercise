@@ -37,15 +37,15 @@
         <p id="result"></p>
     <script>
         function cal(){
-        let so_a=parseInt(document.getElementById("soA").value);
-        let so_b=parseInt(document.getElementById("soB").value);
-        let so_c=parseInt(document.getElementById("soC").value);
-        
+        let so_a=parseFloat(document.getElementById("soA").value);
+        let so_b=parseFloat(document.getElementById("soB").value);
+        let so_c=parseFloat(document.getElementById("soC").value);
+        let _value="";
         if((so_a>0)&&(so_b>0)&&(so_c>0)&&((so_a+so_b)>so_c)&&((so_a+so_c)>so_b)&&((so_b+so_c)>so_a))
         {
-            document.getElementById("result").innerHTML="các số vừa nhập vào là các cạch của tam giác : <br> Số a: " +so_a+"<br> Số b: "+so_b+"<br> Số c: "+so_c+"<br> ";
-            
-        } else  document.getElementById("result").innerHTML="các số vừa nhập vào không phải là các cạch của tam giác : <br> Số a: " +so_a+"<br> Số b: "+so_b+"<br> Số c: "+so_c+"<br> ";
+            _value="là";
+        } else _value="không phải là"
+        document.getElementById("result").innerHTML="các số vừa nhập vào "+_value+" các cạnh của tam giác : <br> Số a: " +so_a+"<br> Số b: "+so_b+"<br> Số c: "+so_c+"<br> ";
         }
         
     </script>

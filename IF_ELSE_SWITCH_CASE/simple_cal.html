@@ -51,10 +51,16 @@
     </div>
     <script>
         let valueCur ="";
-        function add(a){
-            // let valueCur ="";
-            // console.log(valueCur);
+        let _valueCur="";
+        function add(a){          
+            if(a==="+"||a==="-"||a==="*"||a==="/")
+            {
+                _valueCur=document.getElementById("result").value;
+                valueCur=_valueCur+a;
+            } else
+            {
             valueCur += a;
+            }
             document.getElementById("result").value = valueCur;
         }
         function cal(){
@@ -62,11 +68,11 @@
             valueCur=calValue;
             document.getElementById("result").value = calValue;
             valueCur="";
-
         }
         function resetA(){
             console.log(valueCur);
             valueCur="";
+            _valueCur="";
             document.getElementById("result").value = valueCur;
             console.log(valueCur);
         }

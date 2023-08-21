@@ -16,8 +16,10 @@
     </form>
     <script>
         function cal(){
-            let fM=parseInt(document.getElementById("fromM").value)
-            document.getElementById("result").innerHTML="Số feet là: "+(fM*3.2808)+" ft";
+            let fM=parseFloat(document.getElementById("fromM").value)
+            if(fM<0){
+            document.getElementById("result").innerHTML="Vui lòng nhập số lớn hơn hoặc bằng 0";
+            } else document.getElementById("result").innerHTML="Số feet là: "+(fM*3.2808)+" ft";
         }
     </script>
 </body>

@@ -15,11 +15,19 @@
         <p id="result"></p>
         <script>
             function cal(){
-                let _money = parseInt(document.getElementById("soA").value);
-                if (_money<108000000){
-                document.getElementById("result").innerHTML="Người lao động không cần phải đóng thuế thu nhập cá nhâ";
-                 } else 
-                    document.getElementById("result").innerHTML="Số tiền người lao động phải đống thuế là: " +(_money*0.1)+" VND";
+                let _money = parseFloat(document.getElementById("soA").value);
+                if(Number.isInteger(_money))
+                {
+                    if (_money<0)
+                    {
+                        document.getElementById("result").innerHTML="Tổng thu nhập phải lớn hơn hoặc bằng 0";
+                    }else if (_money<108000000)
+                    {
+                        document.getElementById("result").innerHTML="Người lao động không cần phải đóng thuế thu nhập cá nhân";
+                    } else 
+                        document.getElementById("result").innerHTML="Số tiền người lao động phải đống thuế là: " +(_money*0.1)+" VND";
+                } else document.getElementById("result").innerHTML="Vui lòng nhập giá trị nguyên vào";
+
             }
         </script>
 </body>

@@ -35,11 +35,13 @@
     </form>
     <script>
         function cal(){
-            let so_P=parseInt(document.getElementById("soP").value);
-            let so_r=parseInt(document.getElementById("sor").value)/100;
-            let so_n=parseInt(document.getElementById("son").value);
+            let so_P=parseFloat(document.getElementById("soP").value);
+            let so_r=parseFloat(document.getElementById("sor").value)/100;
+            let so_n=parseFloat(document.getElementById("son").value);
             let _money=so_P*Math.pow((1+so_r),so_n);
-            document.getElementById("result").innerHTML="Số tiền lãi là: "+_money+" VND";
+            if (so_P<0||so_n<0||so_r<0) {
+            document.getElementById("result").innerHTML="Hãy nhập các giá trị hợp lệ";
+            } else document.getElementById("result").innerHTML="Số tiền nhận được là: "+_money+" VND";
 
         }
     </script>

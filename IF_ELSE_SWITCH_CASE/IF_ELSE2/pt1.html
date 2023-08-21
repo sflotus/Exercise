@@ -40,10 +40,18 @@
     </form>
     <script>
         function cal(){
-            let so_a=parseInt(document.getElementById("soA").value)
-            let so_b=parseInt(document.getElementById("soB").value)
-            let so_m=parseInt(document.getElementById("soM").value)
-            document.getElementById("result").innerHTML="X = "+ ((so_b-so_m)/so_a);
+            let so_a=parseFloat(document.getElementById("soA").value)
+            let so_b=parseFloat(document.getElementById("soB").value)
+            let so_m=parseFloat(document.getElementById("soM").value)
+            if (so_a==0)
+            { 
+                if (so_b!=so_m)
+                    {
+                    document.getElementById("result").innerHTML="Phương trình vô nghiệm";
+                    }
+                else document.getElementById("result").innerHTML="Phương trình vô số nghiệm";
+
+            } else document.getElementById("result").innerHTML="X = "+ ((so_b-so_m)/so_a);
         }
     </script>
 </body>

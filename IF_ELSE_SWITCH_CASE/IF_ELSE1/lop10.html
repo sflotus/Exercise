@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    </style>
 </head>
 <body>
-    <form action="">
-        <h2>Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.</h2>
-        <label for="soTuoi">Nhập số tuổi vào:</label>
-        <input type="number" name="" id="soTuoi">
-        <br>
-        <input type="button" name="" id="" value="Kiểm tra" onclick="cal()">
-        <p id="result"></p>
-    </form>
+    <div class="grid">
+        <form action="">
+            <h2>Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.</h2>
+            <label for="soTuoi">Nhập số tuổi vào:</label>
+            <input type="number" name="" id="soTuoi">
+            <br>
+            <input type="button" name="" id="" value="Kiểm tra" onclick="cal()">
+            <p id="result"></p>
+        </form>
+    </div>
     <script>
         function cal(){
-            let _sotuoi=parseInt(document.getElementById("soTuoi").value);
-            _sotuoi >= 15 ? document.getElementById("result").innerHTML="<strong>Đủ điều kiện vào lớp 10</strong>" : document.getElementById("result").innerHTML="<strong>Không đủ điều kiện vào lớp 10</strong>"
+            let age=parseFloat(document.getElementById("soTuoi").value);
+            if(Number.isInteger(age))
+            {
+                if(age<=0)
+                {
+                    document.getElementById("result").innerHTML="Vui lòng nhập giá trị lớn hơn 0";
+                } else
+                age >= 16 ? document.getElementById("result").innerHTML="<strong>Đủ điều kiện vào lớp 10</strong>" : document.getElementById("result").innerHTML="<strong>Không đủ điều kiện vào lớp 10</strong>";
+            }
+            else document.getElementById("result").innerHTML="Vui lòng nhập giá trị là số nguyên";
+            
         }
     </script>
 </body>
