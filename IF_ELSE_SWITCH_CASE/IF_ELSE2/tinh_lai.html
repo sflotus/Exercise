@@ -34,17 +34,6 @@
     <p id="result"></p>
     </form>
     <script>
-<<<<<<< HEAD
-        function cal(){
-            let so_P=parseFloat(document.getElementById("soP").value);
-            let so_r=parseFloat(document.getElementById("sor").value)/100;
-            let so_n=parseFloat(document.getElementById("son").value);
-            let _money=so_P*Math.pow((1+so_r),so_n);
-            if (so_P<0||so_n<0||so_r<0) {
-            document.getElementById("result").innerHTML="Hãy nhập các giá trị hợp lệ";
-            } else document.getElementById("result").innerHTML="Số tiền nhận được là: "+_money+" VND";
-
-=======
         function cal()
         {
             let so_P=parseInt(document.getElementById("soP").value);
@@ -59,7 +48,6 @@
                 let _money=so_P*Math.pow((1+so_r),so_n);
                 document.getElementById("result").innerHTML="Số tiền lãi là: "+_money+" VND";
             }
->>>>>>> 1e4f8bee7e290581b362b6ae17e95558deac447c
         }
     </script>
 </body>

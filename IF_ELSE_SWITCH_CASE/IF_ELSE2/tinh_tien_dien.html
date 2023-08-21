@@ -42,22 +42,6 @@
         function cal(){
             let elec_num=parseFloat(document.getElementById("elecNum").value);
             let money_elec =0;
-<<<<<<< HEAD
-            if(elec_num<0){
-                document.getElementById("result").innerHTML="Vui lòng nhập giá trị lớn hơn hoặc bằng 0";
-            } 
-            else 
-            {
-                if (elec_num<50){
-                    money_elec=elec_num*2200;
-                    
-                } else if (elec_num<100){
-                    money_elec=49*2200+(elec_num-49)*2500;
-                    
-                } else if (elec_num<200){
-                    money_elec=49*2200+50*2500+(elec_num-99)*3000;                   
-                } else {
-=======
             if(elec_num<0)
             {
                 document.getElementById("result").innerHTML="Giá trị bé hơn 0. Vui lòng nhập lại";                    
@@ -77,7 +61,6 @@
                 }
                 else 
                 {
->>>>>>> 1e4f8bee7e290581b362b6ae17e95558deac447c
                     money_elec=49*2200+50*2500+100*3000+(elec_num-199)*4000;
                 }
                 document.getElementById("result").innerHTML="Số tiền điện phải trả là : "+money_elec+" VND";
