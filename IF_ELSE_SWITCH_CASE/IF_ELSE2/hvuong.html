@@ -15,11 +15,22 @@
         <p id="result"></p>
     </form>
     <script>
+<<<<<<< HEAD
         function cal(){
             let so_a=parseFloat(document.getElementById("soA").value)
             if(so_a<=0){
             document.getElementById("result").innerHTML="Vui lòng nhập số lớn hơn 0";
             } else document.getElementById("result").innerHTML="Diện tích hình vuông là "+ so_a*so_a + " M<sup>2</sup>";
+=======
+        function cal()
+        {
+            let so_a=parseInt(document.getElementById("soA").value)
+            if(so_a<=0)
+            {
+                document.getElementById("result").innerHTML="Độ dài cạnh không được bằng 0. Vui lòng nhập lại";                    
+            }
+            else document.getElementById("result").innerHTML="Diện tích hình vuông là "+ so_a*so_a + " M<sup>2</sup>";
+>>>>>>> 1e4f8bee7e290581b362b6ae17e95558deac447c
         }
     </script>
 </body>

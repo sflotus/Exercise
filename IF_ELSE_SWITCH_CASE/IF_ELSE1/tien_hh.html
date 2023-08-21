@@ -23,6 +23,7 @@
     <p id="result"></p>
     <script>
         function cal(){
+<<<<<<< HEAD
             var doanhSo=parseFloat(document.getElementById("doanhso").value);
             if (Number.isInteger(doanhso))
             {
@@ -41,6 +42,35 @@
             } else document.getElementById("result").innerHTML="Giá trị nhập vào không hợp lệ, Hãy nhập giá trị nguyên";
             
     }
+=======
+            var doanhSo=parseInt(document.getElementById("doanhso").value);
+            if(doanhSo<0)
+            {
+                document.getElementById("result").innerHTML="Vui lòng nhập số lớn hơn hoặc bằng 0";
+            }
+            else 
+            { 
+                if  (doanhSo<10000000)
+                    {
+                    document.getElementById("result").innerHTML="Phần trăm hoa hồng nhận được: 0%<br>Tiền hoa hồng nhận được: 0 VND";
+                    } 
+                else if  (doanhSo<20000000)
+                    {
+                    document.getElementById("result").innerHTML="Phần trăm hoa hồng nhận được: 3%<br>Tiền hoa hồng nhận được: "+0.03*doanhSo+ "VND";
+                    }
+                else if  (doanhSo<50000000)
+                    {
+                    document.getElementById("result").innerHTML="Phần trăm hoa hồng nhận được: 5%<br>Tiền hoa hồng nhận được: "+0.05*doanhSo+ "VND";
+                    } 
+                else if  (doanhSo<100000000)
+                    {
+                    document.getElementById("result").innerHTML="Phần trăm hoa hồng nhận được: 7%<br>Tiền hoa hồng nhận được: "+0.07*doanhSo+ "VND";
+                    } 
+                else   document.getElementById("result").innerHTML="Phần trăm hoa hồng nhận được: 10%<br>Tiền hoa hồng nhận được: "+0.1*doanhSo+ "VND";                      
+        
+            }
+        }
+>>>>>>> 1e4f8bee7e290581b362b6ae17e95558deac447c
     </script>
 </body>
 </html>
