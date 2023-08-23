@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hiển thị n số nguyên tố đầu tiên</h2>
+    <span>Nhập số n nguyên tố cần in ra</span>
+    <input type="number" name="" id="numberIn">
+    <br>
+    <input type="button" name="" id="" onclick="check()" value="Kiểm tra">
+    <p id="result"></p>
+    <script>
+        function check(){
+            let i=parseFloat(document.getElementById("numberIn").value);
+            let count=0;
+            if (Number.isInteger(i)&&i>=0){
+                console.log(i);
+                
+
+            } else document.getElementById("result").innerHTML="Số n phải là số nguyên và lớn hơn hoặc bằng 0"
+        }
+    </script>
+</body>
+</html>
