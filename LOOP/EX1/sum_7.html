@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Click để tìm tổng 30 số đầu tiên chia hết cho 7" name="" id="" onclick="run()">
+    <p id="result"></p>
+    <script>
+        function run(){
+            let count=0
+            let sum =0;
+            for (var i =1;i>0;i++){
+                if(i%7==0){
+                    sum+=i;
+                    count+=1;
+                    console.log(sum)
+                }
+                if (count>30){
+                    break
+                }
+            }
+            document.getElementById("result").innerHTML="Tổng 30 số đầu tiên chia hết cho 7 là: "+sum;
+        }
+    </script>
+</body>
+</html>

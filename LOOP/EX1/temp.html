@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" id="" value="Bắt Đầu" onclick="start()">
+    <p id="result"></p>
+    <script>
+        function start(){
+        var  temp=parseFloat(prompt("Mời bạn nhập vào nhiệt độ"));
+        while (temp>100){
+            alert("Mời bạn giảm nhiệt độ")
+           break
+        }
+        while(temp<20){
+            alert("Mời bạn tăng nhiệt độ")
+            break
+            }
+        document.getElementById("result").innerHTML="Nhiệt độ bạn nhập vào là: "+temp+" độ C";
+    }
+    </script>
+</body>
+</html>

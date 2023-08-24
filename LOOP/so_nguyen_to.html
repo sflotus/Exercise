@@ -14,14 +14,27 @@
     <p id="result"></p>
     <script>
         function check(){
-            let i=parseFloat(document.getElementById("numberIn").value);
-            let count=0;
-            if (Number.isInteger(i)&&i>=0){
-                console.log(i);
-                
-
-            } else document.getElementById("result").innerHTML="Số n phải là số nguyên và lớn hơn hoặc bằng 0"
-        }
+            var num=parseFloat(document.getElementById("numberIn").value);
+            var count=0;
+            var _result="";
+            if (Number.isInteger(num)&&num>=0){
+                for (let i=2;i<1000;i++){
+                    if(count<num){
+                        let _tam=0;
+                        for (let j =1;j<=i;j++){
+                            if(i%j==0){
+                                _tam +=1 ;
+                            }
+                        }
+                        if (_tam==2){
+                           document.write(i+"<br>");
+                            count+=1;
+                        }
+                        _tam=0;
+                    } else break
+                }
+             } else document.getElementById("result").innerHTML="Số n phải là số nguyên dương"
+            }
     </script>
 </body>
 </html>

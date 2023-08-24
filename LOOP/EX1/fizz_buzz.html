@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Click để in từ 1-100" name="" id="" onclick="run()">
+    <script>
+        function run(){
+            for (var i = 1; i <= 100; i++) {
+                if ((i % 3 == 0) && (i % 5 == 0)) { 
+                    document.write('FizzBuzz '); 
+
+                } else if (i % 3 == 0) { 
+                    document.write('Fizz '); 
+                } else if (i % 5 == 0) { 
+                    document.write('Buzz '); 
+                } else { 
+                    document.write(i+" ");
+                }
+            }
+    //         for (var i = 1; i <= 100; i++) {
+    //             var output = '';
+    //             if(i % 3 == 0) output += 'Fizz'
+    //             if(i % 5 == 0) output += 'Buzz'
+    //             console.log(output || i); // biểu thức || ở đây có nghĩa là nếu output không rỗng thì lấy chính nó, nếu không thì lấy i.
+    //    }
+    }
+    </script>
+</body>
+</html>
