@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = parseInt(prompt("Nhập vào số cần tính giai thừa"))
+        if ( num <= 0){
+                alert("Các số nhập vào phải lớn hơn 0.");
+            } else{            
+                let count =1 ;
+                for (let i = 1;i<=num;i++ ){
+                count *=i;
+                }
+                alert("Giá trị giai thừa số bạn vừa nhập là: "+count);
+            }
+    </script>
+</body>
+</html>

@@ -14,25 +14,25 @@
     <p id="result"></p>
     <script>
         function check(){
-            var num=parseFloat(document.getElementById("numberIn").value);
+            var n=parseFloat(document.getElementById("numberIn").value);
             var count=0;
-            var _result="";
-            if (Number.isInteger(num)&&num>=0){
-                for (let i=2;i<1000;i++){
-                    if(count<num){
-                        let _tam=0;
-                        for (let j =1;j<=i;j++){
-                            if(i%j==0){
-                                _tam +=1 ;
-                            }
-                        }
-                        if (_tam==2){
-                           document.write(i+"<br>");
-                            count+=1;
-                        }
-                        _tam=0;
-                    } else break
+            let number = 2 ;
+            if (Number.isInteger(n)){
+             while (count <= n){
+                let isPrime = true;
+                for (let i = 2; i <= number/2; i ++){
+                    if(number % i ===0){
+                        isPrime = false;
+                        break;
+                    }
                 }
+                if (isPrime){
+                    document.write(number + "<br>");
+                    count++;
+                } 
+                number++;
+             }
+
              } else document.getElementById("result").innerHTML="Số n phải là số nguyên dương"
             }
     </script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Click để in ra n số fibonaci" name="" id="" onclick="run()">
+    <script>
+        function run(){
+            let inputN = parseInt(prompt("Nhập vào số n"))
+            let  num1 =1;
+            let num2 =2;
+            let nextNum;
+            let count =2;
+            document.write(num1+" ");
+            document.write(num2+" ");
+            nextNum=num1+num2;
+            while(count < inputN){
+                document.write(nextNum+" ");
+                num1 = num2;
+                num2= nextNum;
+                nextNum=num1+num2;
+                count+=1;
+            }
+        }
+    </script>    
+</body>
+</html>

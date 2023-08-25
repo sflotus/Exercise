@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" id="" value="Click to start game" onclick="run()">
+    <script>
+        function run(){
+            let maxNum=parseInt(prompt("Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?"));
+            let correctNum=Math.floor(Math.random()*maxNum);
+            console.log(correctNum)
+            let count =0;
+            while (count<3){
+                let guessNum=parseInt(prompt("Nhập số bạn muốn đoán"));
+                count+=1;
+                if (guessNum != correctNum){
+                    if(guessNum<correctNum){
+                        alert("Đáp án lớn hơn số bạn nhập")
+                    } else alert("Đáp án nhỏ hơn số bạn nhập")
+                }
+                if (guessNum == correctNum){
+                    alert("Chúc mừng bạn đã đoán đúng");
+                }
+                console.log(count);
+            }
+            if (count>=3) alert("Bạn đã gết số lần đoán");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("<div style='width:200px'>")
+            let canhA=parseInt(prompt("Nhập vào chiều dài cạnh a"));
+            let canhB=parseInt(prompt("Nhập vào chiều dài cạnh b"));
+            if ( canhA <= 0 || canhB <= 0){
+                alert("Các số nhập vào phải lớn hơn 0.");
+                location.reload();
+            } else {
+                for(i = 1; i <= canhA; i++){
+                    for(j = 1; j <= canhB; j++ ){
+                        if(i == 1 || j == 1 || i == canhA || j ==  canhB){
+                            document.write("*");
+                        } else document.write("&nbsp&nbsp");
+                    }
+                    document.write("<br>")
+                }
+                document.write('<input type="button" name="" id="" value="Thử lại" onclick=" location.reload()">')
+            }
+        document.write("</div>")
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" id="" value="Bắt đầu" onclick="run()" >
+    <script>
+        function run(){
+            
+            let length = parseInt(prompt("Nhập chiều dài cạnh"));
+        document.write("<div style='width:200px'>")
+            document.write("<div>")
+                for (i=1;i<=length;i++){
+                    for (j=1;j<=i;j++){
+                        document.write("*")
+                    }
+                    document.write("<br>")
+            }
+            document.write("</div>")
+            document.write("<div style='text-align: right'>")
+                for (i=1;i<=length;i++){
+                    for (j=1;j<=i;j++){
+                        document.write("*")
+                    }
+                    document.write("<br>")
+            }
+            document.write("</div>")
+            document.write("<div>")
+                for (i=length;i>=1;i--){
+                    for (j=1;j<=i;j++){
+                        document.write("*")
+                    }
+                    document.write("<br>")
+            }
+            document.write("</div>")
+            document.write("<div style='text-align: right'>")
+                for (i=length;i>=1;i--){
+                    for (j=1;j<=i;j++){
+                        document.write("*")
+                    }
+                    document.write("<br>")
+            }
+            document.write("</div>")
+        document.write("</div>")
+
+        }
+    </script>
+</body>
+</html>
