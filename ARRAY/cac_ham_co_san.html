@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Khai báo mảng</h2>
+    <p>Nhập chiều dài mảng</p>
+    <input type="text" name="" id="input_length">
+    <input type="button" name="" id="" value="Nhấn để nhập mảng" onclick="add()">
+    <p id="result"></p>
+    <br>
+    <br>
+    <br>
+    <p>Nhập ký tự bạn muốn Join</p>
+    <input type="text" name="" id="input_join">
+    <input type="button" name="" id="" value="Nhấn để thực hiện Join" onclick="runJOIN()">
+    <p id="result1"></p>
+    <br>
+    <br>
+    <p>Nhập ký tự bạn muốn Push</p>
+    <input type="text" name="" id="input_push">
+    <input type="button" name="" id="" value="Nhấn để thực hiện Push" onclick="runPUSH()">
+    <p id="result2"></p>
+    <br>
+    <input type="button" name="" id="" value="Nhấn để thực hiện UPER/LOWER" onclick="uplow()">
+    <p id="result3"></p>
+    <br>
+    <br>
+    <script>
+        var arr = new Array();
+        function add(){
+        var inputLength = parseInt(document.getElementById("input_length").value);
+            for (let i = 0; i < inputLength; i++) {
+                arr[i] = prompt("Nhập vào phần tử: "+i)
+            }
+            document.getElementById("result").innerHTML = "Mảng bạn vừa nhập là:" +arr;
+         }
+        function runJOIN(){
+            let inputJoin = document.getElementById("input_join").value;
+            console.log(arr);
+            let resultJoin = arr.join(inputJoin);
+            document.getElementById("result1").innerHTML = "Kết Quả: " + resultJoin;
+         }
+        function runPUSH(){
+            let inputPush = document.getElementById("input_push").value;
+            let resultPush = [arr[0]]
+            for (let i = 1; i < arr.length; i++){
+                if(arr[i-1] % 2 ===0 && arr[i] % 2 ===0){
+                    resultPush.push(inputPush, arr[i]);
+                } else  resultPush.push(arr[i]);
+            }
+
+            document.getElementById("result2").innerHTML = "Kết Quả: " + resultPush.join("");
+            console.log(resultPush)
+        }
+        function uplow(){
+            let strx=prompt("Nhập vào chuổi:").toString();
+        }
+    </script>
+</body>
+</html>
