@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+     .grid{
+        width: 600px;
+        max-width: 100%;
+        margin: 20px auto;
+        display: flex;
+    }
+   </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Nhập bất cứ từ gì</h1>
+    <div class="grid">
+    <form name="">
+        <textarea name="" id="input" cols="90" rows="10" onkeypress="run()"></textarea>
+    </form>
+    </div>
+    <script>
+        var arr = ["T","Ô","I"," ","Y","Ê","U"," ","B","Ạ","N"," ","N","H","I","Ề","U"," ","L","Ắ","M"," ","<","3"," ","<","3"];
+        var output = "";
+        console.log(arr);
+        function run(){
+            let input_word = document.getElementById("input").value;
+            console.log(input_word.length)
+            if (input_word.length > 0) {
+                for (let i = 1; i <= input_word.length; i++) {
+                    output += arr[i-1];
+                    if (i == arr.length + 1){
+                        document.getElementById("input").value = "";
+                        output = "";
+                    }             
+                }
+                
+            }
+            document.getElementById("input").value = output;
+            output = "";
+            setTimeout("run()",1);
+        }
+    </script>
+</body>
+</html>

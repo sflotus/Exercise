@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" id="" value="Bắt đầu" onclick="run()">
+    <p id="result"></p>
+    <script>
+        function run(){
+            var n = parseInt(prompt("Nhập n phần tử  của mãng"));
+            var arr =  new Array();
+            var count = 0;
+            var output = "";
+            for (let i = 0; i < n; i++) {
+                arr[i] = parseInt(prompt("Mời bạn nhập giá trị phần tử thứ " + (i+1)));   
+                if(arr[i] >= 10){
+                    count += 1;
+                    output += arr[i] + " ";
+                }             
+            }
+            console.log(arr);
+            document.getElementById("result").innerHTML="Có " + count + " phần tử có giá trị lớn hơn 10<br>Đó là: " + output;
+        }
+    </script>
+</body>
+</html>

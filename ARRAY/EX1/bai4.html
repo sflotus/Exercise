@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" id="" value="Bắt đầu" onclick="run()">
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <script>
+        function run(){
+            var n = parseInt(prompt("Nhập n phần tử  của mãng số nguyên "));
+            var arr =  new Array();
+            var count = 0;
+            var output = new Array();
+            for (let i = 0; i < n; i++) {
+                arr[i] = parseInt(prompt("Mời bạn nhập giá trị phần tử thứ " + (i+1)));   
+            }
+            for (let i = n - 1, j= 0; i >= 0, j < n; i--, j++) {     
+                output[j] = arr[i];                                     
+            }
+            console.log(arr);
+            document.getElementById("result1").innerHTML="Mảng bạn vừa nhập vào là : " + arr;
+            document.getElementById("result2").innerHTML="Mảng sau khi đảo ngược: " + output;
+        }
+    </script>
+</body>
+</html>

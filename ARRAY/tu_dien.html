@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> các từ có thể dịch là: apple; banana; school; pen; car</p>
+    <input type="text" name="" id="input_search">
+    <input type="button" name="" id="" value="Tìm Kiếm" onclick="search()">
+    <p id="KQ"></p>
+    <script>
+        function search(){
+            var eng = ["apple","banana","school","pen","car"];
+            var vie = ["Táo","Chuối","Trường học","Bút máy","Xe hơi"];
+            var result = "";
+            var input = document.getElementById("input_search").value;
+            for (let i = 0; i  < eng.length; i++) {
+                if (input == eng[i]) {                   
+                    for (let j = 0; j < vie.length; j++) {
+                        if (i == j) {
+                        result = vie[j];
+                        }
+                    }
+                }
+            }
+            document.getElementById("KQ").innerHTML="Từ bạn nhập vào có nghĩa là: " +result;
+        }
+    </script>
+</body>
+</html>

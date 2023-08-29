@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" id="" value="Bắt đầu" onclick="run()">
+    <p id="result"></p>
+    <script>
+        function run(){
+            var n = parseInt(prompt("Nhập n phần tử  của mãng số nguyên "));
+            var arr =  new Array();
+            var count = 0;
+            var output = "";
+            for (let i = 0; i < n; i++) {
+                arr[i] = parseInt(prompt("Mời bạn nhập giá trị phần tử thứ " + (i+1)));   
+                count += arr[i];
+            }
+            for (let i = 0; i < n; i++) {
+                if( output <= arr[i]){
+                    output = arr[i] + " ";
+                }             
+            }
+            console.log(arr);
+            document.getElementById("result").innerHTML="Giá trị lớn nhất đó là " + output + "<br>Giá trị  trung bình của các phần tử đó là: " + (count/n);
+        }
+    </script>
+</body>
+</html>
