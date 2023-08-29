@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" id="" value="Bắt đầu" onclick="run()">
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <script>
+        function run(){
+            var n = parseInt(prompt("Nhập n phần tử  của mãng số nguyên "));
+            var arr =  new Array();
+            var output = new Array();
+            for (let i = 0; i < n; i++) {
+                arr[i] = parseInt(prompt("Mời bạn nhập giá trị phần tử thứ " + (i+1)));   
+            }
+        }
+    </script>
+</body>
+</html>

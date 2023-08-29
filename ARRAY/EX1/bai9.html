@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" id="" value="Bắt đầu" onclick="run()">
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <script>
+        function run(){
+            var n = parseInt(prompt("Nhập n phần tử  của mãng 1 "));
+            var arr1 =  new Array();
+            var arr2 = new Array();
+            var output = new Array();
+            for (let i = 0; i < n; i++) {
+                arr1[i] = parseInt(prompt("Mời bạn nhập giá trị phần tử thứ " + (i+1) + "của mảng 1"));   
+            }
+            var m = parseInt(prompt("Nhập m phần tử  của mãng 2 "));
+            for (let i = 0; i < m; i++) {
+                arr2[i] = parseInt(prompt("Mời bạn nhập giá trị phần tử thứ " + (i+1) + " của mảng 2"));   
+            }
+        }
+    </script>
+</body>
+</html>
