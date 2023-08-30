@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" name="" id="" value="Bắt đầu" onclick="run()">
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <script>
+        function run(){
+          var arr1 = prompt("Nhập vào chuổi 1:")
+          var arr2 = prompt("Nhập vào chuổi 2:")
+          document.getElementById("result1").innerHTML = " Chuổi 1 bạn vừa nhập là :"  + arr1;
+          document.getElementById("result2").innerHTML = " Chuổi 1 bạn vừa nhập là :"  + arr2;
+          if ( arr1.length == arr2.length){
+            for ( let i = 0; i <  arr1.length; i++){
+              var isSame = true;
+              if (arr1[i] !== arr2[i]){
+                isSame = false ;
+              }
+            }
+            if (isSame){
+              document.getElementById("result3").innerHTML = "2 chuổi bạn vừa nhập giống nhau";
+            } else document.getElementById("result3").innerHTML = "2 chuổi bạn vừa nhập không giống nhau";
+          } else document.getElementById("result3").innerHTML = "2 chuổi bạn vừa nhập không giống nhau";
+        }
+    </script>
+  </body>
+</html>

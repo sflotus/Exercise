@@ -14,13 +14,25 @@
         function run(){
             var n = parseInt(prompt("Nhập n phần tử  của mãng số nguyên "));
             var arr =  new Array();
+            var output =[]
             for (let i = 0; i < n; i++) {
                 arr[i] = parseInt(prompt("Mời bạn nhập giá trị phần tử thứ " + (i+1)));   
             }
             var num = parseInt(prompt("Nhập vào số nguyên bạn cần kiểm tra:"));
-            //  check xem giá trị nào trong mãng = giá trị num và lấy vị trí của giá trị đó
-            //  dùng vòng for từ num-1, a[num-1] -> a[num] a[n]=0
-        }
+            for (let i = 0; i < arr.length; i++) {
+                if(arr[i] == num){
+                    continue
+                } else {  
+                    output.push(arr[i])  ;
+                }
+            }
+            for (let i = output.length; i < arr.length; i++) {
+                output.push(0)  ;
+            }
+            document.getElementById("result1").innerHTML="Mảng bạn vừa nhập vào là : " + arr;
+            document.getElementById("result2").innerHTML="Mảng sau khí xoá số: " + num + " là: " + output;
+              
+    }
     </script>
 </body>
 </html>

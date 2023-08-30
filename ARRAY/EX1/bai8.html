@@ -14,10 +14,22 @@
         function run(){
             var n = parseInt(prompt("Nhập n phần tử  của mãng số nguyên "));
             var arr =  new Array();
-            var output = new Array();
+            var _tam;
             for (let i = 0; i < n; i++) {
                 arr[i] = parseInt(prompt("Mời bạn nhập giá trị phần tử thứ " + (i+1)));   
             }
+            console.log(arr);
+            document.getElementById("result1").innerHTML="mảng bạn vừa nhập là: " + arr;
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i+1; j < arr.length; j++) {
+                    if(arr[i] <= arr[j]){
+                        _tam = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = _tam;
+                    }             
+                }
+            }
+            document.getElementById("result2").innerHTML="mảng sau khi đã sắp xếp giảm dần: " + arr;
         }
     </script>
 </body>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" name="" id="" value="Bắt đầu" onclick="run()" />
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <script>
+      function run(){
+        var arr = prompt("Nhập vào chuổi bạn muốn kiểm tra: ").trim();
+        // var arr = input.toString();
+        var count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === " " && arr[i+1]=== " "){
+            i++;
+          } else if ( arr[i] === " "){
+            count += 1;
+          }
+        }
+        document.getElementById("result1").innerHTML = "Chuổi bạn vừa nhập là : " + arr;
+        document.getElementById("result2").innerHTML = "Chuổi bạn vừa nhập có: " + (count + 1) + " Ký tự";
+
+      }
+    </script>
+  </body>
+</html>

@@ -19,10 +19,17 @@
             for (let i = 0; i < n; i++) {
                 arr1[i] = parseInt(prompt("Mời bạn nhập giá trị phần tử thứ " + (i+1) + "của mảng 1"));   
             }
+            document.getElementById("result1").innerHTML="Mảng 1 bạn vừa nhập là: " + arr1;
             var m = parseInt(prompt("Nhập m phần tử  của mãng 2 "));
             for (let i = 0; i < m; i++) {
                 arr2[i] = parseInt(prompt("Mời bạn nhập giá trị phần tử thứ " + (i+1) + " của mảng 2"));   
             }
+            document.getElementById("result2").innerHTML="Mảng 2 bạn vừa nhập là: " + arr2;
+            for (let i = 0; i < arr2.length; i++) {
+                arr1.push(arr2[i]);
+            }
+            console.log(arr1);
+            document.getElementById("result3").innerHTML="Mảng sau khi được nối: " + arr1;
         }
     </script>
 </body>

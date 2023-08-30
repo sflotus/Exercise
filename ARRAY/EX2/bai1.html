@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" name="" id="" value="Bắt đầu" onclick="run()" />
+    <p id="result"></p>
+    <script>
+      function run() {
+        let n = parseInt(prompt("Nhập n phần tử  của mãng 2 chiều "));
+        let m = parseInt(prompt("Nhập m phần tử  của mãng 2 chiều "));
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+          arr[i] = [];
+          for (let j = 0; j < m; j++) {
+            arr[i][j] = prompt(`Nhap phan tu thu i-${i} va j-${j}: `);
+          }
+        }
+        console.table(arr);
+        for (let i in arr) {
+          document.write("row " + i + "<br>");
+          for (var j in arr[i]) {
+            document.write(" " + arr[i][j] + "<br>");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
