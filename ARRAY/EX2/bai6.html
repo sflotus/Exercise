@@ -11,16 +11,18 @@
     <p id="result2"></p>
     <p id="result3"></p>
     <script>
-      var  arr = prompt("Nhập vào mảng ký tự bạn cần kiểm tra")
+      function run(){
+        var  arr = prompt("Nhập vào mảng ký tự bạn cần kiểm tra")
       var output = new Array();
       for ( i = 0; i < arr.length; i++){
-        if (arr[i] === "-"){
+        if (arr[i] == "-"){
           output[i]="_";
-        }
-        output[i] = arr[i];
+        }else output[i] = arr[i];
       }
-      document.getElementById("result1").innerHTML = " Chuổi 1 bạn vừa nhập là :"  + arr;
-      document.getElementById("result2").innerHTML = " Chuổi sau khi kiểm tra là :"  + output;
+      console.log(output.join(""))
+      document.getElementById("result1").innerHTML = " Chuổi bạn vừa nhập là :"  + arr;
+      document.getElementById("result2").innerHTML = " Chuổi sau khi kiểm tra là :"  + output.join("");
+      }
     </script>
   </body>
 </html>
