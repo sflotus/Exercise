@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <input type="button" name="" id="" onclick="run()" value="Bắt đầu">
+    </center>
+    <script>
+        function findMin(a,b,c){
+            return Math.min(a,b,c);
+        }
+        function run(){
+            let numA =  parseInt(prompt("Nhập vào số nguyên A:"));
+            let numB =  parseInt(prompt("Nhập vào số nguyên B:"));
+            let numC =  parseInt(prompt("Nhập vào số nguyên C:"));
+            alert("Số nhỏ nhất là: " + findMin(numA,numB,numC));
+        }
+    </script>
+</body>
+</html>

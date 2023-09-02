@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" id="" value="Click Here" onclick="run()">
+    <script>
+        var arr1 = ["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"];
+        var arr2 = ["Ursa Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+        function check(a){
+            let isStar = false;
+            let result = "";
+            for ( let i = 0; i <  arr1.length; i++){
+                if( a == arr1[i]){
+                    result =  arr2[i];
+                    isStar = true;
+                }
+            }
+            console.log(result);
+            if (isStar){
+                alert("Chòm sao bạn cần tìm là: "+result);
+            } else alert("Không có chòm sao bạn cần tìm");
+        }
+        function run(){
+            let input =  prompt("Nhập vào ngôi sao bạn cần tìm:");
+            check(input);
+        }
+    </script>
+</body>
+</html>

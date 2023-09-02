@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <input type="button" name="" id="" onclick="run()" value="Bắt đầu">
+        <p>Số A: <span id="soA"></span></p>
+        <p>Số B: <span id="soB"></span></p>
+        <p>Sau khi đổi vị trí:</p>
+        <p>Số A: <span id="outputA"></span></p>
+        <p>Số B: <span id="outputB"></span></p>
+    </center>
+    <script>  
+        function run(){
+            var numA = parseInt(prompt("Nhập vào số nguyên A"))
+            var numB = parseInt(prompt("Nhập vào số nguyên B"))
+            document.getElementById("soA").innerHTML = numA;
+            document.getElementById("soB").innerHTML = numB;
+            console.log(numA,numB);
+            let tmp = numA ;
+            numA = numB;
+            numB = tmp;
+            console.log(numA,numB);
+            document.getElementById("outputA").innerHTML = numA;
+            document.getElementById("outputB").innerHTML = numB;
+        }
+        // vì sao viết kiểu này thì k swap ? 
+        // function swap(x,y){
+        //     let tmp = x ;
+        //     x = y;
+        //     y = tmp;
+        // }
+        // function run(){
+        //     var numA = parseInt(prompt("Nhập vào số nguyên A"))
+        //     var numB = parseInt(prompt("Nhập vào số nguyên B"))
+        //     document.getElementById("soA").innerHTML = numA;
+        //     document.getElementById("soB").innerHTML = numB;
+        //     console.log(numA,numB);
+        //     swap(numA, numB)
+        //     console.log(numA,numB);
+        //     document.getElementById("outputA").innerHTML = numA;
+        //     document.getElementById("outputB").innerHTML = numB;
+        // }
+    </script>
+</body>
+</html>

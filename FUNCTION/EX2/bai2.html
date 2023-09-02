@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nhập vào bán kính:  <input type="number" name="" id="input" oninput="change()">cm</p>
+    <p>Diện tích là :  <span id="resultS"></span>cm<sup>2</sup></p>
+    <p>Chu vi là là :  <span id="resultP"></span>cm</p>
+    <script>
+        function p(a){
+            return 2*a*3.14;
+        }
+        function s(a){
+            return Math.sqrt(a)*3.14;
+        }
+        function change(){
+            var r =(document.getElementById("input").value)
+            document.getElementById("resultS").innerHTML = s(r);
+            document.getElementById("resultP").innerHTML = p(r);
+        }
+    </script>
+</body>
+</html>

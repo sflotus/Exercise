@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Bất đầu" name="" id="" onclick="run()">
+    <p id="input"></p>
+    <p id="output"></p>
+    <script>
+        function run(){
+            let n = parseInt(prompt("Nhập vào chiều dài của mảng"))
+            var arr1 = new Array();
+            var arr2 = new Array();
+            for (let i = 0, j = n-1; i < n, j >= 0; i++,j--) {
+                arr1[i] = parseInt(prompt("Nhập vào phần tử " + (i+1)));
+                arr2[j] = arr1[i];            
+            }
+            console.log(arr1);
+            console.log(arr2);
+            document.getElementById("input").innerHTML = "Mảng bạn vừa nhập là: " + arr1;
+            document.getElementById("output").innerHTML = "Mảng sau khi đảo ngược: " + arr2;
+        }
+    </script>
+</body>
+</html>

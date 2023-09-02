@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Giai thừa của <input type="number" name="" id="input" oninput="run()">là: <span id="result"></span></p>
+    <script>
+        function cal(a){
+            if ( a == 2){
+                return 2;
+            }
+            return a * cal(a-1);
+        }
+        function run(){
+            let num = parseInt(document.getElementById("input").value);
+            if(num ==0 || num == 1){
+                document.getElementById("result").innerHTML = "1";
+            }else document.getElementById("result").innerHTML = cal(num);
+        }
+    </script>
+</body>
+</html>

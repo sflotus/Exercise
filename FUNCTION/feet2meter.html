@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nhập <input type="text" name="" id="inputF" oninput="changeF()"> meter = <span id="resultF"></span> feet</p>
+    <p>Nhập <input type="text" name="" id="inputM" oninput="changeM()"> feet = <span id="resultM"></span> meter</p>
+    <script>
+        function f2m(a){
+            let meter = 3.279 * a;
+            return meter;
+        }
+        function m2f(a){
+             let feet =  0.305 * a;
+            return feet;
+        }
+        function changeF(){
+            var f = document.getElementById("inputF").value;
+            var result = f2m(f);
+            document.getElementById("resultF").innerHTML = result;
+        }
+        function changeM(){
+            var m = document.getElementById("inputM").value;
+            var result = m2f(m);
+            document.getElementById("resultM").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

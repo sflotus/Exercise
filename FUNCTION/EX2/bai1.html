@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bình phương của  <input type="number" name="" id="input" oninput="change()">  là:  <span id="result"></span></p>
+    <script>
+        function sqr(a){
+            return a*a
+        }
+        function change(){
+            var f = document.getElementById("input").value;
+            document.getElementById("result").innerHTML = sqr(f);
+        }
+    </script>
+</body>
+</html>
