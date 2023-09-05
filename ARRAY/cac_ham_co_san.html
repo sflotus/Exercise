@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Khai báo mảng</h2>
-    <p>Nhập chiều dài mảng</p>
-    <input type="text" name="" id="input_length">
-    <input type="button" name="" id="" value="Nhấn để nhập mảng" onclick="add()">
+    <h2>Sử dụng các hàm có sẵn của mảng</h2>
+    <!-- <p>Nhập chiều dài mảng</p> -->
+    <!-- <input type="text" name="" id="input_length">
+    <input type="button" name="" id="" value="Nhấn để nhập mảng" onclick="add()"> -->
     <p id="result"></p>
     <br>
     <br>
@@ -18,8 +18,11 @@
     <p id="result1"></p>
     <br>
     <br>
+    <br>
     <input type="button" name="" id="" value="Nhấn để thực hiện Push" onclick="runPUSH()">
     <p id="result2"></p>
+    <br>
+    <br>
     <br>
     <input type="button" name="" id="" value="Nhấn để thực hiện UPER/LOWER" onclick="uplow()">
     <p id="result3"></p>
@@ -28,19 +31,22 @@
     <script>
         var arr = new Array();
         function add(){
-        var inputLength = parseInt(document.getElementById("input_length").value);
+        var inputLength = parseInt(prompt("Nhập vào chiều dài mảng"));
             for (let i = 0; i < inputLength; i++) {
                 arr[i] = prompt("Nhập vào phần tử: "+(i+1))
             }
             document.getElementById("result").innerHTML = "Mảng bạn vừa nhập là:" +arr;
          }
         function runJOIN(){
+            add();
             let inputJoin = prompt("Nhập ký tự bạn muốn join");
             console.log(arr);
             let resultJoin = arr.join(inputJoin);
             document.getElementById("result1").innerHTML = "Kết Quả: " + resultJoin;
          }
         function runPUSH(){
+            let input = parseInt(prompt("Nhập vào dãy số"));
+            let arr = input.toString();
             let inputPush = prompt("Nhập ký tự bạn muốn Push");
             let resultPush = [arr[0]]
             for (let i = 1; i < arr.length; i++){
@@ -52,7 +58,25 @@
             console.log(resultPush)
         }
         function uplow(){
-            let strx=prompt("Nhập vào chuổi:").toString();
+            let str=prompt("Nhập vào chuổi:").toString();
+            let up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let low = 'abcdefghijklmnopqrstuvwxyz';
+            let result = [];
+            for (let i = 0; i < str.length; i++) {
+                if(up.indexOf(str[i]) !== -1)
+                {
+                result.push(str[i].toLowerCase());
+                }
+                else if(low.indexOf(str[i]) !== -1)
+                {
+                result.push(str[i].toUpperCase());
+                }
+                else 
+                {
+                result.push(str[i]);                           
+                }
+            }
+            document.getElementById("result3").innerHTML = "Kết Quả: " + result.join("");
         }
     </script>
 </body>
