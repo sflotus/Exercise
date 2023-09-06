@@ -20,7 +20,7 @@
             }
             console.log(arr);
             document.getElementById("result1").innerHTML="mảng bạn vừa nhập là: " + arr;
-            for (let i = 0; i < arr.length; i++) {
+            for (let i = 0; i < arr.length-1; i++) {
                 for (let j = i+1; j < arr.length; j++) {
                     if(arr[i] <= arr[j]){
                         _tam = arr[i];
