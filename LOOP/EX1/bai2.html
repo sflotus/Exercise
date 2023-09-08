@@ -14,7 +14,9 @@
         while ( temp < 20 || temp > 100){
             if ( temp < 20){
                 temp =  parseFloat(prompt("Mời bạn tăng nhiệt độ"));
-            } else temp =  parseFloat(prompt("Mời bạn giảm nhiệt độ"));
+            } else {
+                temp =  parseFloat(prompt("Mời bạn giảm nhiệt độ"));
+            }
         }
         document.getElementById("result").innerHTML="Nhiệt độ bạn nhập vào là: "+temp+" độ C";
     }
