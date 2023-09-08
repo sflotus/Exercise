@@ -10,21 +10,23 @@
     <input type="button" name="" id="" onclick="run()" value="Bắt đầu">
     </center>
     <script>
-        function check(a){
-            let isPrime = true;
-            for (let i = 2; i <= a/2; i ++){
-                    if(a % i ===0){
-                        isPrime = false;
-                        break;
-                    }
+        function check(number){
+            if(number <2 || isNaN(number)) {
+            return false;
+            } else {
+                for(let i = 2; i<= Math.sqrt(number) ; i++) {
+                    if(number %i ==0) {
+                        return false;
+                    }   
                 }
-            if ( isPrime){
-                alert("Số bạn vừa nhập là số nguyên tố");
-            } else alert("Số bạn vừa nhập không phải số nguyên tố")
+            }
+            return true;
         }
         function run(){
             var inputNum = parseInt(prompt("Mời bạn nhập số cần check"));
-            var result = check(inputNum);
+                if(check(inputNum)) {
+                    alert(inputNum +" là số nguyên tố")
+                } else alert(inputNum + " không phải là số nguyên tố")
         }
     </script>
 </body>
