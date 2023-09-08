@@ -11,14 +11,11 @@
     <script>
         function start(){
         var  temp=parseFloat(prompt("Mời bạn nhập vào nhiệt độ"));
-        while (temp>100){
-            alert("Mời bạn giảm nhiệt độ")
-           break
+        while ( temp < 20 || temp > 100){
+            if ( temp < 20){
+                temp =  parseFloat(prompt("Mời bạn tăng nhiệt độ"));
+            } else temp =  parseFloat(prompt("Mời bạn giảm nhiệt độ"));
         }
-        while(temp<20){
-            alert("Mời bạn tăng nhiệt độ")
-            break
-            }
         document.getElementById("result").innerHTML="Nhiệt độ bạn nhập vào là: "+temp+" độ C";
     }
     </script>
