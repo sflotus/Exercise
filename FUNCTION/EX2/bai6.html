@@ -11,11 +11,13 @@
     </center>
     <script>
         function check(a){
-            return a > 0;
+            return Number.isInteger(a);
         }
         function run(){
-            let input = parseInt(prompt("Nhập vào số cần kiểm tra:"));
-            alert(check(input));
+            let input = parseFloat(prompt("Nhập vào số cần kiểm tra:"));
+            if ( check(input) && input > 0){
+                alert("True")
+            } else alert("False")
         }
     </script>
 </body>
