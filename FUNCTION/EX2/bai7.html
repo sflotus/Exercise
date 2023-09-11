@@ -14,8 +14,8 @@
         <p>Số A: <span id="outputA"></span></p>
         <p>Số B: <span id="outputB"></span></p>
     </center>
-    <script>  
-        function run(){
+    <script> 
+        function run(){ 
             var numA = parseInt(prompt("Nhập vào số nguyên A"))
             var numB = parseInt(prompt("Nhập vào số nguyên B"))
             document.getElementById("soA").innerHTML = numA;
@@ -28,23 +28,6 @@
             document.getElementById("outputA").innerHTML = numA;
             document.getElementById("outputB").innerHTML = numB;
         }
-        // vì sao viết kiểu này thì k swap ? 
-        // function swap(x,y){
-        //     let tmp = x ;
-        //     x = y;
-        //     y = tmp;
-        // }
-        // function run(){
-        //     var numA = parseInt(prompt("Nhập vào số nguyên A"))
-        //     var numB = parseInt(prompt("Nhập vào số nguyên B"))
-        //     document.getElementById("soA").innerHTML = numA;
-        //     document.getElementById("soB").innerHTML = numB;
-        //     console.log(numA,numB);
-        //     swap(numA, numB)
-        //     console.log(numA,numB);
-        //     document.getElementById("outputA").innerHTML = numA;
-        //     document.getElementById("outputB").innerHTML = numB;
-        // }
     </script>
 </body>
 </html>
