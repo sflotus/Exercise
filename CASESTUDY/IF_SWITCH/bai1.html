@@ -10,14 +10,23 @@
         <input type="button" value="Bắt đầu" name="" id="" onclick="run()">
     </center>
     <script>
-        var vat;
-        function calVat(x){
-            if (x < 7000000){
-                x = 0.05;
-            } else if ( x < 15000000){
-                x = 0.1;
-            } else x = 2;
-            return x;
+        function run(){
+            let vat = 0
+            let total = 0
+            let input = parseFloat(prompt("Mời bạn nhập mức lương thu nhập"))
+            if (Number.isInteger(input) && input > 0){
+                if(input < 7000000){
+                    vat = "5%";
+                    total = input*(1-0.05);
+                } else if ( input < 15000000){
+                    vat = "10%";
+                    total = input*(1-0.1);
+                } else {
+                    vat = "20%";
+                    total = input*(1-0.2);
+                }
+            alert("Thuế thu nhập cá nhân là : " + vat + " Lương ròng là: " + total +"đ")
+            } else alert("Tiền lương phải là giá trị nguyên dương")
         }
     </script>
 </body>
