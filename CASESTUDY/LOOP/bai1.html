@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <input type="button" value="Bắt đầu" name="" id="" onclick="run()">
+    </center>
+    <script>
+        function run(){
+            let n = parseFloat(prompt("Nhập vào chiều cao n"))
+            if (Number.isInteger(n) && n > 0){
+                for ( let i = 1; i <= n; i++){
+                    for (let j = 1; j <= i; j++){
+                            if(i == 1 || j == 1 || i == n || j ==  i){
+                                document.write("*");
+                            } else document.write("&nbsp&nbsp");
+                    }
+                    document.write("<br>")
+                }
+            } else alert("Mời bạn nhập giá trị nguyên dương")
+        }
+    </script>
+</body>
+</html>
