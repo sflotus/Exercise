@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <input type="button" value="Bắt đầu" name="" id="" onclick="run()">
+        <p id="resultA"></p>
+        <p id="resultB"></p>
+        <p id="resultOUTPUT"></p>
+    </center>
+<script>
+    function maxFraction(numerators, denominators) {
+        var length = numerators.length;
+        var result = 0;
+        for (let i = 0; i < length; i++) {
+            if (numerators[i] / denominators[i] > numerators[i - 1] / denominators[i - 1]) {
+                result = i;
+            }
+        }
+        return result;
+    }
+    function addArr(x){
+        let arr = new Array();
+        for (let i = 0; i < x; i++) {
+            arr[i] =parseFloat(prompt("Nhập vào phần tử: "+(i+1)))
+        }
+        return arr;
+    }
+    function run(){
+        var lengthArr = parseInt(prompt("Nhập vào chiều dài mảng A và B"));
+        var  arrA =  addArr(lengthArr);
+        document.getElementById("resultA").innerHTML = "Mảng A bạn vừa nhập là:" +arrA;
+        var  arrB =  addArr(lengthArr);
+        document.getElementById("resultB").innerHTML = "Mảng B bạn vừa nhập là:" +arrB;
+        console.log(arrA, arrB);
+        document.getElementById("resultOUTPUT").innerHTML = "Kết quả: " +maxFraction(arrA,arrB);
+    }
+</script>
+</body>
+</html>

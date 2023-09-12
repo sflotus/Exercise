@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <input type="button" value="Bắt đầu" name="" id="" onclick="run()">
+        <p id="result"></p>
+        <p id="resultOUTPUT"></p>
+    </center>
+    <script>
+        var arr = new Array();
+        let output = new Array();
+        function run(){
+            var inputLength = parseInt(prompt("Nhập vào chiều dài mảng"));
+            for (let i = 0; i < inputLength; i++) {
+                arr[i] =parseFloat(prompt("Nhập vào phần tử: "+(i+1)))
+            }
+            for (let i = 0; i <  arr.length; i++){
+                output[i] = 0;
+                for (let j = 0; j <= i; j++) {
+                    output[i] += arr[j]
+                }
+            }
+            console.log(output);
+            document.getElementById("result").innerHTML = "Mảng bạn vừa nhập là:" +arr;
+            document.getElementById("resultOUTPUT").innerHTML = "Kết quả: " +output;
+         }
+    </script>
+</body>
+</html>
