@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <input type="button" name="" id="" onclick="run()" value="Bắt đầu">
+    </center>
+<script>
+    function changeWord(param){
+        let temp = [];
+        let output = [];
+        let beforeChange = [];
+        console.log("param: " + param);
+        for (i = 0 ; i < param.length; i++){
+            if (param[i] == " "){
+            beforeChange.push("&nbsp&nbsp");
+            }else beforeChange.push(param[i]);
+        }
+        document.write("Dãy ký tự nhập ban đầu là: " + beforeChange.join("") + "<br>")
+        //lowCase param
+        temp= param.toLowerCase();
+        console.log(temp);
+        for ( i = 0; i <  param.length; i++){
+            temp[i] =  param[i]
+        }
+        console.log(temp);
+        for ( i = 0; i < temp.length; i++){
+            if ( temp[i]==" " && temp[i+1] ==" "){
+                continue
+            }
+            output.push(temp[i]);
+        }
+        console.log(output);
+        output[0] = output[0].toUpperCase();
+        for ( i = 0 ; i < output.length; i++){
+            if (output[i-1]==" "){
+                output[i] = output[i].toUpperCase();
+            }
+        }
+        document.write("Dãy ký tự sau khi xử lý : " + output.join("") + "<br>")
+        //use split method
+        let newWord = temp.split(" ")
+        console.log(newWord);
+        let max = newWord[0]
+        for ( let i = 0; i <  newWord.length; i++){
+            if(max.length <= newWord[i].length){
+                max = newWord[i]
+            }
+        }
+        document.write("Chuỗi ký tự dài nhất  là: " + max + "<br>")
+
+    }
+    function run(){
+        document.body.innerHTML = '';
+        input = prompt("Nhập vào dãy bạn cần kiểm tra")
+        changeWord(input);
+        document.write('<input type="button" name="" id="" onclick="run()" value="Thử lại">')
+    }
+</script>
+</body>
+</html>
