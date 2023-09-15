@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <input type="button" name="" id="" value="Bắt đầu" onclick="run()">
+    </center>
+<script>
+    function findMax(arr){
+        let max = arr[0][0];
+        for ( let i = 0 ; i < arr.length; i++){
+            for ( let j = 0; j < arr[i].length; j++ ){
+                if ( max <= arr[i][j]){
+                    max =  arr[i][j]
+                }
+            }
+        }
+        return max;
+    }
+    function findMin(arr){
+        let min = arr[0][0];
+        for ( let i = 0 ; i < arr.length; i++){
+            for ( let j = 0; j < arr[i].length; j++ ){
+                if ( min >= arr[i][j]){
+                    min = arr[i][j];
+                }
+            }
+        }
+        return min;
+
+    }
+    function checkParseInt(i, j) {
+                let input = parseFloat(prompt(`Nhập phần tử thứ i-${i} và j-${j}: `))
+                while (true) {
+                    if (isNaN(input)) {
+                        alert("Xin nhập giá trị số")
+                        input = parseFloat(prompt(`nhập lại phần tử thứ i-${i} và j-${j}: `))
+                    } else {
+                        return input;
+                    }
+                }
+            }
+    function addArr(){
+        document.write("Mảng 2 chiều bạn vừa nhập là <br>")
+        document.write("<table border=1 width=50px")
+        let m = parseInt(prompt("Nhập kích thước m của mảng "));
+        let n = parseInt(prompt("Nhập kích thước n của mảng "));
+        let arr = [];
+        for (let i = 0; i < m; i++) {
+          document.write("<tr>");
+          arr[i] = [];
+          for (let j = 0; j < n; j++) {
+            arr[i][j] = checkParseInt(i, j)
+            document.write("<td>"+ arr[i][j] +"</td>");
+          }
+          document.write("</tr>");
+        }
+        document.write("</table>")
+        console.table(arr);
+        return arr;
+    }
+    function run(){
+        let input = addArr()
+        document.write("<br> Số lớn nhất là: " + findMax(input))
+        document.write("<br> Số nhỏ nhất là: " + findMin(input))
+    }
+</script>
+</body>
+</html>
