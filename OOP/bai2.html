@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <input type="button" name="" id="" value="Bắt đầu" onclick="run()">
+    </center>
+<script>
+    class Temperature{
+        constructor(tempC){
+        this.tempC = tempC;
+        }
+        changeToF(){
+            return (this.tempC*1.8 +32);
+        }
+        changeToK(){
+            return (this.tempC + 273.15);
+        }
+    }
+    function checkinputC(input){
+        while (true) {
+            if (isNaN(input) || input < -273) {
+                alert("Nhiệt độ phải là giá trị số và giá trị nhỏ nhất là 273")
+                input = parseFloat(prompt(`nhập lại giá trị `))
+            } else {
+                return input;
+            }
+        }        
+        return input
+    }
+    function run(){
+        let inputC=checkinputC(parseFloat(prompt("Mời bạn nhập nhiệt độ")));
+        let temperature = new Temperature(inputC);
+        document.write("Nhiệt độ bạn vừa nhập là: " +  temperature.tempC + " độ C  <br>")
+        document.write("Quy đổi sang độ F: " +  temperature.changeToF().toFixed(2) + " độ F <br>")
+        document.write("Quy đổi sang độ K: " +  temperature.changeToK().toFixed(2) +" độ K <br>")
+    }
+</script>
+</body>
+</html>

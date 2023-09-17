@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <input type="button" name="" id="" value="Bắt đầu" onclick="run()">
+        <canvas id="myCanvas" width="2000" height="1000"></canvas>
+    </center>
+    
+<script>
+    class Rectangular {
+        constructor(width, height){
+            this.width = width;
+            this.height = height;
+        }
+        calP(){
+            return 2*(this.width + this.height);
+        }
+        calS(){
+            return this.width*this.height;
+        }
+        setHeight(height){
+            this.height = height;
+        }
+        setWidth(width){
+            this.width = width;
+        }
+        draw(){
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.moveTo(20,20);
+            ctx.lineTo(this.width+20,20);
+            ctx.moveTo(this.width+20,20);
+            ctx.lineTo(this.width+20,this.height+20);
+            ctx.moveTo(this.width+20,this.height+20);
+            ctx.lineTo(20,this.height+20);
+            ctx.moveTo(20,this.height+20);
+            ctx.lineTo(20,20);
+            ctx.stroke();
+            // ctx.beginPath();
+            // ctx.rect(20 ,20, width, height)
+            // ctx.stroke();
+        }
+    }
+    function run(){
+    document.write('<center>');
+    document.write('<input type="button" name="" id="tryAgain" value="thử lại" onclick="retry()">');
+    document.write('<canvas id="myCanvas" width="2000" height="1000"></canvas>');
+    document.write('</center>');
+    let width = parseFloat(prompt("Mời bạn nhập chiều dài"));
+    let height = parseFloat(prompt("Mời bạn nhập chiều rộng"));
+    let rectangular = new Rectangular(width,height);
+    alert("Chu vi là: " + rectangular.calP() +
+    " Diện tích là: " + rectangular.calS());
+    rectangular.draw();
+    }
+    function retry(){
+        const removeBtn = document.getElementById("tryAgain")
+        removeBtn.remove();
+        const removeCanvas = document.getElementById("myCanvas");
+        removeCanvas.remove();
+        run()
+    }
+</script>
+</body>
+</html>

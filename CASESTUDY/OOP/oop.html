@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addNewStudent()">Thêm mới Học Viên</button>
+    <button onclick="editStundent()">Chỉnh sửa Học Viên</button>
+    <button onclick="removeStudent()">Xóa Học Viên</button>
+    <div id="content"></div>
+<script>
+        class Student{
+            constructor(id, name, className, email, dateOfBirth, Module){
+                this.id = id;
+                this.name = name;
+                this.className = className;
+                this.email = email;
+                this.dateOfBirth = dateOfBirth;
+                this.Module = Module;
+            }
+        }
+        let students = [];
+        function display() {
+        let data = "";
+        data += "<table border='1' width='500px'>" +
+           "<tr>" +
+           "<th>Id</th>" +
+           "<th>Name</th>" +
+           "<th>className</th>" +
+           "<th>email</th>" +
+           "<th>dateOfBirth</th>" +
+           "<th>Module</th>" +
+           "</tr>"
+        for (let temp of students) {
+           data += "<tr> " +
+               "<td>" + temp.id + "</td>" +
+               "<td>" + temp.name + "</td>" +
+               "<td>" + temp.className + "</td>" +
+               "<td>" + temp.email + "</td>" +
+               "<td>" + temp.dateOfBirth + "</td>" +
+               "<td>" + temp.Module + "</td>" +
+               "</tr>";
+        }
+       data += "</table>";
+       document.getElementById("content").innerHTML = data;
+   }
+   display();
+   function addNewStudent(){
+        let id = prompt("Mời bạn nhập id");
+        let name = prompt("Mời bạn nhập tên");
+        let className = prompt("Mời bạn nhập lớp học");
+        let email = prompt("Mời bạn nhập email");
+        let dateOfBirth = prompt("Mời bạn nhập ngày tháng năm sinh");
+        let Module = prompt("Mời bạn nhập Modul");
+        let student = new Student(id, name, className, email, dateOfBirth, Module);
+        students.push(student);
+    display();
+   }
+    console.log(students)
+</script>
+</body>
+</html>
