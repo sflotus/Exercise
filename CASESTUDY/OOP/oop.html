@@ -11,7 +11,7 @@
     <button onclick="removeStudent()">Xóa Học Viên</button>
     <div id="content"></div>
 <script>
-        class Student{
+    class Student{
             constructor(id, name, className, email, dateOfBirth, Module){
                 this.id = id;
                 this.name = name;
@@ -20,17 +20,109 @@
                 this.dateOfBirth = dateOfBirth;
                 this.Module = Module;
             }
+            setName(newName){
+                this.name = newName;
+            }
+            setClassName(newClassName){
+                this.className = newClassName;
+            }
+            setEmail(newEmail){
+                this.email = newEmail;
+            }
+            setDateOfBirth(newDateOfBirth){
+                this.dateOfBirth = newDateOfBirth;
+            }
+            setModule(newModule){
+                this.Module = newModule;
+            }
+    }
+    let students = [];
+    function checkId(){
+        let id = "HV-"+Math.floor(Math.random()*10000);
+        for ( i = 0 ; i < students.length; i++){
+            if ( students[i].id == id){
+                id = "HV-"+Math.floor(Math.random()*10000);
+            } 
         }
-        let students = [];
-        function display() {
+        return id;
+    }
+    function checkName(){
+        let input = prompt(`Mời bạn nhập tên `)
+                while (true) {
+                    if (input.length > 50) {
+                        alert("Độ dài tên tối đa 50 ký tự")
+                        input = prompt(`nhập lại họ tên `)
+                    } else {
+                        return input;
+                    }
+                }
+    }
+    function checkModule(){
+        let input = parseFloat(prompt('Mời bạn nhập Module'))
+            while(true){
+                if(input > 0 && input < 7 && Number.isInteger(input)){
+                    return input
+                } else {
+                    alert("Module là giá trị nguyên từ 1 đến 6")
+                    input = parseFloat(prompt('Mời bạn nhập lại Module'))
+                }
+            }
+    }
+    function isValidDate(input){
+            // kiểm tra input có phải 1 chuổi hay không
+            if ( !input || typeof(input) !=="string"){
+                return false;
+            }
+            // kiểm tra định dạng input
+            let temp = input.split("/")
+            console.log(temp[0].length);
+            if ( temp.length !== 3 || temp[0].length !== 2 || temp[1].length !== 2 || temp[2].length !== 4){
+                return false;
+            }
+            // kiểm tra định dạng dd/mm/yyyy
+            if ( temp[1] < 1 || temp[1] > 12){
+                return false
+            } 
+            if(temp[1] == 1 || temp[1] == 3 || temp[1] == 5 || temp[1] == 7 || temp[1] == 8 || temp[1] == 10 || temp[1] == 12){
+                if ( temp[0] < 0 || temp[0] > 31){
+                    return false;
+                }
+            }
+            if(temp[1] == 4 || temp[1] == 6 || temp[1] == 9 || temp[1] == 11){
+                if ( temp[0] < 0 || temp[0] > 30){
+                    return false;
+                }
+            }   
+            if (temp[2] % 4 == 0 && (temp[2] % 100 != 0 || temp[2] % 400 == 0)){
+                if ( temp[1] == 2 && ( temp[0] < 1 || temp[0] > 29)){
+                    return false;
+                }
+            } else {if ( temp[1] == 2 && ( temp[0] < 1 || temp[0] > 28)){
+                    return false;
+                }
+            }
+            return true
+        }
+    function checkDateOfBirth(){
+        let input = prompt("Mời bạn nhập ngày tháng năm sinh (dd/mm/yyyy)");
+        while ( true){
+            if(isValidDate(input)){
+                return input;
+            } else {
+                alert("Ngày tháng năm không đúng định dạng dd/mm/yyyy");
+                input = prompt("Mời bạn nhập lại");
+            }
+        }
+    }
+    function display() {
         let data = "";
         data += "<table border='1' width='500px'>" +
            "<tr>" +
-           "<th>Id</th>" +
-           "<th>Name</th>" +
-           "<th>className</th>" +
+           "<th>Mã học viên</th>" +
+           "<th>Tên</th>" +
+           "<th>Lớp</th>" +
            "<th>email</th>" +
-           "<th>dateOfBirth</th>" +
+           "<th>Ngày sinh</th>" +
            "<th>Module</th>" +
            "</tr>"
         for (let temp of students) {
@@ -46,17 +138,58 @@
        data += "</table>";
        document.getElementById("content").innerHTML = data;
    }
-   display();
-   function addNewStudent(){
-        let id = prompt("Mời bạn nhập id");
-        let name = prompt("Mời bạn nhập tên");
+    display();
+    function addNewStudent(){
+        let id = checkId();
+        let name = checkName();
         let className = prompt("Mời bạn nhập lớp học");
         let email = prompt("Mời bạn nhập email");
-        let dateOfBirth = prompt("Mời bạn nhập ngày tháng năm sinh");
-        let Module = prompt("Mời bạn nhập Modul");
+        let dateOfBirth = checkDateOfBirth();
+        let Module = checkModule();
         let student = new Student(id, name, className, email, dateOfBirth, Module);
         students.push(student);
     display();
+   }
+   function removeStudent(){
+        inputId = prompt("Mời bạn nhập ID học viên cần xóa")
+        let isExit = false
+        for( let i = 0; i < students.length; i ++){
+            if ( students[i].id == inputId ){
+            isExit = true;
+            if(confirm("Bạn có chắc chắn muốn xóa ?")){
+                students.splice(i,1);
+            }
+        }
+        }
+        if (!isExit){
+            alert("Mã học viên không tồn tại")
+        }
+        console.log(students);
+        display();
+   }
+   function editStundent(){
+        inputId ="HV-" + prompt("Mời bạn nhập ID học viên cần sửa")
+        let isExit = false
+        for( let i = 0; i < students.length; i ++){
+            if ( students[i].id == inputId ){
+                isExit = true;
+                let newName = checkName();
+                let newClassName = prompt("Mời bạn nhập lớp học mới");
+                let newEmail = prompt("Mời bạn nhập email mới");
+                let newDateOfBirth = checkDateOfBirth();
+                let newModule = checkModule(); 
+                students[i].setName(newName);
+                students[i].setClassName(newClassName);
+                students[i].setEmail(newEmail);
+                students[i].setDateOfBirth(newDateOfBirth);
+                students[i].setModule(newModule);
+            }
+        }
+        if (!isExit){
+            alert("Mã học viên không tồn tại")
+        }
+        console.log(students);
+        display();
    }
     console.log(students)
 </script>
