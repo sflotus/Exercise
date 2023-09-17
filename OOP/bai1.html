@@ -46,6 +46,7 @@
             // ctx.stroke();
         }
     }
+    var rectangular;
     function run(){
     document.write('<center>');
     document.write('<input type="button" name="" id="tryAgain" value="thử lại" onclick="retry()">');
@@ -53,17 +54,20 @@
     document.write('</center>');
     let width = parseFloat(prompt("Mời bạn nhập chiều dài"));
     let height = parseFloat(prompt("Mời bạn nhập chiều rộng"));
-    let rectangular = new Rectangular(width,height);
+    rectangular = new Rectangular(width,height);
     alert("Chu vi là: " + rectangular.calP() +
     " Diện tích là: " + rectangular.calS());
     rectangular.draw();
     }
     function retry(){
-        const removeBtn = document.getElementById("tryAgain")
-        removeBtn.remove();
         const removeCanvas = document.getElementById("myCanvas");
         removeCanvas.remove();
-        run()
+        let newWidth = parseFloat(prompt("Mời bạn nhập lại chiều dài"));
+        let newHeight = parseFloat(prompt("Mời bạn nhập lại chiều rộng"));
+        rectangular.setWidth(newWidth);
+        rectangular.setHeight(newHeight);
+        document.write('<canvas id="myCanvas" width="2000" height="1000"></canvas>');
+        rectangular.draw();
     }
 </script>
 </body>
