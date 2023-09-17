@@ -1,64 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
-<button onclick="addNewProduct()">Đăng ký sản phẩm</button>
-<div id="content"></div>
-<script>
-    class Product {
+  </head>
+  <body>
+    <button onclick="addNewProduct()">Đăng ký sản phẩm</button>
+    <div id="content"></div>
+    <script>
+      class Product {
         constructor(codeProduct, nameProduct, price, description) {
-            this.codeProduct = codeProduct;
-            this.nameProduct = nameProduct;
-            this.price = price;
-            this.description = description;
+          this.codeProduct = codeProduct;
+          this.nameProduct = nameProduct;
+          this.price = price;
+          this.description = description;
         }
 
         start() {
-            console.log("Máy tính " + this.nameProduct + "đã khởi động");
+          console.log("Máy tính " + this.nameProduct + "đã khởi động");
         }
 
         setNameProduct(nameProduct) {
-            this.nameProduct = nameProduct;
+          this.nameProduct = nameProduct;
         }
-    }
+      }
 
-    // let computer = new Product("MT-001", "Lenovo", 20000000, "Core i5, Ram 8GB");
-    // let computer1 = new Product("", "Asus", 20000000, "Core i5, Ram 8GB");
-    // console.log(computer.nameProduct);
-    // computer.setNameProduct("HP");
-    // computer.start();
-    // computer1.start();
+      // let computer = new Product("MT-001", "Lenovo", 20000000, "Core i5, Ram 8GB");
+      // let computer1 = new Product("", "Asus", 20000000, "Core i5, Ram 8GB");
+      // console.log(computer.nameProduct);
+      // computer.setNameProduct("HP");
+      // computer.start();
+      // computer1.start();
 
-    let products = [];
-    products.push(new Product("MT-001", "Lenovo", 20000000, "Core i5, Ram 8GB"))
-    products.push(new Product("MT-002", "Lenovo2", 20000000, "Core i5, Ram 8GB"))
-    products.push(new Product("MT-003", "Lenovo3", 20000000, "Core i5, Ram 8GB"))
-   function display() {
-       let data = "";
-       data += "<table border='1' width='500px'>" +
-           "<tr>" +
-           "<th>Id</th>" +
-           "<th>Name</th>" +
-           "<th>Price</th>" +
-           "<th>Description</th>" +
-           "</tr>"
-       for (let temp of products) {
-           data += "<tr> " +
-               "<td>" + temp.codeProduct + "</td>" +
-               "<td>" + temp.nameProduct + "</td>" +
-               "<td>" + temp.price + "</td>" +
-               "<td>" + temp.description + "</td>" +
-               "</tr>";
-       }
-       data += "</table>";
-       document.getElementById("content").innerHTML = data;
-   }
-   display();
+      let products = [];
+      products.push(
+        new Product("MT-001", "Lenovo", 20000000, "Core i5, Ram 8GB")
+      );
+      products.push(
+        new Product("MT-002", "Lenovo2", 20000000, "Core i5, Ram 8GB")
+      );
+      products.push(
+        new Product("MT-003", "Lenovo3", 20000000, "Core i5, Ram 8GB")
+      );
+      function display() {
+        let data = "";
+        data +=
+          "<table border='1' width='500px'>" +
+          "<tr>" +
+          "<th>Id</th>" +
+          "<th>Name</th>" +
+          "<th>Price</th>" +
+          "<th>Description</th>" +
+          "</tr>";
+        for (let temp of products) {
+          data +=
+            "<tr> " +
+            "<td>" +
+            temp.codeProduct +
+            "</td>" +
+            "<td>" +
+            temp.nameProduct +
+            "</td>" +
+            "<td>" +
+            temp.price +
+            "</td>" +
+            "<td>" +
+            temp.description +
+            "</td>" +
+            "</tr>";
+        }
+        data += "</table>";
+        document.getElementById("content").innerHTML = data;
+      }
+      display();
 
-    function addNewProduct() {
+      function addNewProduct() {
         let id = prompt("Mời bạn nhập id");
         let name = prompt("Mời bạn nhập tên");
         let price = prompt("Mời bạn nhập giá");
@@ -66,8 +82,8 @@
         let product = new Product(id, name, price, description);
         products.push(product);
         display();
-    }
-    fun
-</script>
-</body>
+      }
+      fun;
+    </script>
+  </body>
 </html>
