@@ -117,6 +117,17 @@
         }
         return true;
       }
+      function checkEmail() {
+        let input = prompt("Mời bạn nhập email");
+        while (true) {
+          if (isEmailValid(input)) {
+            return input;
+          } else {
+            alert("Email không đúng định dạng");
+            input = prompt("Mời bạn nhập lại");
+          }
+        }
+      }
       function checkDateOfBirth() {
         let input = prompt("Mời bạn nhập ngày tháng năm sinh (dd/mm/yyyy)");
         while (true) {
@@ -127,6 +138,19 @@
             input = prompt("Mời bạn nhập lại");
           }
         }
+      }
+      function isEmailValid(email) {
+        // sử dụng regex
+        const regex =
+          /^[a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        return regex.test(email);
+      }
+      function addInput() {
+        return parseFloat(
+          prompt(
+            "Nhập số tương ứng với trường cần sửa: 1 - Tên; 2 - Lớp; 3 - Email; 4 - Ngày sinh; 5 - Module; Ký tự khác : Hoàn thành"
+          )
+        );
       }
       function display() {
         let data = "";
@@ -171,7 +195,7 @@
         let id = checkId();
         let name = checkName();
         let className = prompt("Mời bạn nhập lớp học");
-        let email = prompt("Mời bạn nhập email");
+        let email = checkEmail();
         let dateOfBirth = checkDateOfBirth();
         let Module = checkModule();
         let student = new Student(
@@ -208,16 +232,31 @@
         for (let i = 0; i < students.length; i++) {
           if (students[i].id == inputId) {
             isExit = true;
-            let newName = checkName();
-            let newClassName = prompt("Mời bạn nhập lớp học mới");
-            let newEmail = prompt("Mời bạn nhập email mới");
-            let newDateOfBirth = checkDateOfBirth();
-            let newModule = checkModule();
-            students[i].setName(newName);
-            students[i].setClassName(newClassName);
-            students[i].setEmail(newEmail);
-            students[i].setDateOfBirth(newDateOfBirth);
-            students[i].setModule(newModule);
+            do {
+              let inputNumberEdit = addInput();
+              switch (inputNumberEdit) {
+                case 1:
+                  let newName = checkName();
+                  students[i].setName(newName);
+                  break;
+                case 2:
+                  let newClassName = prompt("Mời bạn nhập lớp học mới");
+                  students[i].setClassName(newClassName);
+                  break;
+                case 3:
+                  let newEmail = prompt("Mời bạn nhập email mới");
+                  students[i].setEmail(newEmail);
+                  break;
+                case 4:
+                  let newDateOfBirth = checkDateOfBirth();
+                  students[i].setDateOfBirth(newDateOfBirth);
+                  break;
+                case 5:
+                  let newModule = checkModule();
+                  students[i].setModule(newModule);
+                  break;
+              }
+            } while (inputNumberEdit > 0 && inputNumberEdit < 7);
           }
         }
         if (!isExit) {
