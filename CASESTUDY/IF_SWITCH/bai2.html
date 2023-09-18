@@ -12,24 +12,28 @@
     <script>
         function run(){
             let input = prompt("Mời bạn nhập vào ký tự cần kiểm tra")
-            switch (input) {
-                case "o":
-                case "u":
-                case "i":
-                case "a":
-                case "e": 
-                case "O":
-                case "U":
-                case "I":
-                case "A":
-                case "E": 
-                {
-                    alert("Ký tự bạn vừa nhập vào là nguyên âm")
-                    break;
+            if ( isNaN(parseFloat(input))){
+                switch (input) {
+                    case "o":
+                    case "u":
+                    case "i":
+                    case "a":
+                    case "e": 
+                    case "O":
+                    case "U":
+                    case "I":
+                    case "A":
+                    case "E": 
+                    {
+                        alert("Ký tự bạn vừa nhập vào là nguyên âm");
+                        break;
+                    }
+                    default : alert("Ký tự bạn vừa nhập vào không phải nguyên âm");
                 }
-                default : alert("Ký tự bạn vừa nhập vào không phải nguyên âm")
-                
+            } else {
+                alert("Vui lòng nhập ký tự chữ.");
             }
+            
         }
     </script>
 </body>
