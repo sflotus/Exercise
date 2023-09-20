@@ -232,8 +232,10 @@
         for (let i = 0; i < students.length; i++) {
           if (students[i].id == inputId) {
             isExit = true;
+            let inputNumberEdit;
             do {
-              let inputNumberEdit = addInput();
+              inputNumberEdit = addInput();
+              console.log(inputNumberEdit > 0 && inputNumberEdit < 7);
               switch (inputNumberEdit) {
                 case 1:
                   let newName = checkName();

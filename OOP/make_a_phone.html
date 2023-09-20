@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .grid {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    #mobileNokia,
+    #mobileIphone {
+      border: 1px solid;
+      border-radius: 3px;
+    }
+  </style>
+  <body>
+    <div class="grid">
+      <div id="mobileNokia">
+        <form action="">
+          <table>
+            <tr>
+              <td>
+                <label for="nokiaInbox">Inbox Message</label>
+              </td>
+              <td>
+                <textarea name="" id="nokiaInbox" cols="30" rows="5"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="nokiaSent">Sent Message</label>
+              </td>
+              <td>
+                <textarea name="" id="nokiaSent" cols="30" rows="5"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="nokiaDraf">Draf Message</label>
+              </td>
+              <td>
+                <textarea name="" id="nokiaDraf" cols="30" rows="5"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><span>Status:</span></td>
+              <td><span id="nokiaStatus"></span></td>
+            </tr>
+            <tr>
+              <td><span>battery:</span></td>
+              <td><span id="nokiabattery"></span></td>
+            </tr>
+            <tr>
+              <td>
+                <input type="button" name="" id="" onclick="" value="On/Off" />
+                <input type="button" name="" id="" onclick="" value="Charger" />
+              </td>
+              <td>
+                <input
+                  type="button"
+                  name=""
+                  id=""
+                  onclick=""
+                  value="Send Message"
+                />
+                <input
+                  type="button"
+                  name=""
+                  id=""
+                  onclick=""
+                  value="Type Message"
+                />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div id="mobileIphone">
+        <form action="">
+          <table>
+            <tr>
+              <td>
+                <label for="iphoneInbox">Inbox Message</label>
+              </td>
+              <td>
+                <textarea id="iphoneInbox" cols="30" rows="5"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="iphoneSent">Sent Message</label>
+              </td>
+              <td>
+                <textarea name="" id="iphoneSent" cols="30" rows="5"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="iphoneDraf">Draf Message</label>
+              </td>
+              <td>
+                <textarea name="" id="iphoneDraf" cols="30" rows="5"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><span>Status:</span></td>
+              <td><span id="iphoneStatus"></span></td>
+            </tr>
+            <tr>
+              <td><span>battery:</span></td>
+              <td><span id="iphonebattery"></span></td>
+            </tr>
+            <tr>
+              <td>
+                <input type="button" name="" id="" onclick="" value="On/Off" />
+                <input type="button" name="" id="" onclick="" value="Charger" />
+              </td>
+              <td>
+                <input
+                  type="button"
+                  name=""
+                  id=""
+                  onclick=""
+                  value="Send Message"
+                />
+                <input
+                  type="button"
+                  name=""
+                  id=""
+                  onclick=""
+                  value="Type Message"
+                />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script>
+    class Mobile {
+      constructor(status, battery, inboxMessage, sendMessage, drafMessage) {
+        this.status = status;
+        this.battery = battery;
+        this.inboxMessage = inboxMessage;
+        this.sendMessage = sendMessage;
+        this.drafMessage = drafMessage;
+      }
+      draf(Message) {
+        if (checkStatus(this.status)) {
+          this.drafMessage += Message;
+          this.battery--;
+        } else alert("Please turn on your Phone");
+      }
+      getMessage(Message) {
+        this.inboxMessage = Message;
+        this.battery--;
+      }
+      send(mobile) {
+        if (checkStatus(this.status)) {
+          mobile.getMessage(Message);
+          this.sendMessage += this.drafMessage;
+          this.drafMessage = "";
+          battery--;
+        } else alert("Please turn on your Phone");
+      }
+      turnOnOff(status) {
+        if (checkStatus(this.status)) {
+          this.status = "OFF";
+        } else this.status = "ON";
+      }
+      charger() {
+        this.battery = 100;
+      }
+    }
+    function checkStatus(status) {
+      if (status === "ON") {
+        return true;
+      } else return false;
+    }
+  </script>
+</html>

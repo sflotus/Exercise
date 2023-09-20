@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <center>
-        <input type="button" name="" id="" value="Bắt đầu" onclick="run()">
+      <input type="button" name="" id="" value="Bắt đầu" onclick="run()" />
     </center>
-<script>
-    function differentSymbolsNaive(input){
-        let output =[];
-        let count = 0
-        document.write("Dãy ký tự bạn vừa nhập là : " + input + "<br>")
-        for ( i = 0; i <  input.length; i++){
-            output[i] =  input[i]
+    <script>
+      function differentSymbolsNaive(input) {
+        let output = [];
+        let count = 0;
+        document.write("Dãy ký tự bạn vừa nhập là : " + input + "<br>");
+        for (i = 0; i < input.length; i++) {
+          output[i] = input[i];
         }
-        output.sort()
+        output.sort();
         console.log(output);
-        for ( i  = 0; i < output.length; i++ ){
-            if ( output[i] == output [i+1]){
-                continue;
-            }
-            count++;
+        for (i = 0; i < output.length; i++) {
+          if (output[i] == output[i + 1]) {
+            continue;
+          }
+          count++;
         }
         return count;
-    }
-    function run(){
+      }
+      function run() {
         let arr = prompt("Nhập vào chuổi cần kiểm tra");
         document.write("số ký tự khác nhau là: " + differentSymbolsNaive(arr));
-    }
-</script>
-</body>
-</html> 
+      }
+    </script>
+  </body>
+</html>
