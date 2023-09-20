@@ -169,12 +169,15 @@
         } else alert("Please turn on your Phone");
       }
       turnOnOff(status) {
-        if (checkStatus(this.status)) {
-          this.status = "OFF";
-        } else this.status = "ON";
+        if (battery > 0) {
+          if (checkStatus(this.status)) {
+            this.status = "OFF";
+          } else this.status = "ON";
+        } else alert("Your phone is low battery. Please Charger!");
       }
       charger() {
         this.battery = 100;
+        alert("Your phone is full battery!");
       }
     }
     function checkStatus(status) {
@@ -182,5 +185,24 @@
         return true;
       } else return false;
     }
+    function display() {
+      //display nokia
+      document.getElementById("nokiaInbox").innerHTML = nokia.inboxMessage;
+      document.getElementById("nokiaSent").innerHTML = nokia.sendMessage;
+      document.getElementById("nokiaDraf").innerHTML = nokia.drafMessage;
+      document.getElementById("nokiaStatus").innerHTML = nokia.status;
+      document.getElementById("nokiabattery").innerHTML = nokia.battery + "%";
+      // display iphone
+      document.getElementById("iphoneInbox").innerHTML = iphone.inboxMessage;
+      document.getElementById("iphoneSent").innerHTML = iphone.sendMessage;
+      document.getElementById("iphoneDraf").innerHTML = iphone.drafMessage;
+      document.getElementById("iphoneStatus").innerHTML = iphone.status;
+      document.getElementById("iphonebattery").innerHTML = iphone.battery + "%";
+    }
+    ///Interaction between 2 phones
+    var nokia = new Mobile("ON", 100, "", "", "");
+    var iphone = new Mobile("ON", 80, "", "", "");
+
+    display();
   </script>
 </html>
