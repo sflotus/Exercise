@@ -56,24 +56,54 @@
             </tr>
             <tr>
               <td>
-                <input type="button" name="" id="" onclick="" value="On/Off" />
-                <input type="button" name="" id="" onclick="" value="Charger" />
+                <input
+                  style="width: 65px"
+                  type="button"
+                  name="nokia"
+                  id=""
+                  onclick="turnMobile(this.name)"
+                  value="On/Off" />
+                <br />
+                <br />
+                <input
+                  style="width: 65px"
+                  type="button"
+                  name="nokia"
+                  id=""
+                  onclick="chargerMobile(this.name)"
+                  value="Charger" />
               </td>
               <td>
                 <input
+                  style="width: 110px"
                   type="button"
-                  name=""
+                  name="nokia"
                   id=""
-                  onclick=""
-                  value="Send Message"
-                />
+                  onclick="sendMes(this.name)"
+                  value="Send Message" />
                 <input
+                  style="width: 110px"
                   type="button"
-                  name=""
+                  name="nokia"
                   id=""
-                  onclick=""
-                  value="Type Message"
-                />
+                  onclick="typeMes(this.name)"
+                  value="Type Message" />
+                <br />
+                <br />
+                <input
+                  style="width: 110px"
+                  type="button"
+                  name="nokia"
+                  id=""
+                  onclick="clearSendMes(this.name)"
+                  value="Clear Outbox " />
+                <input
+                  style="width: 110px"
+                  type="button"
+                  name="nokia"
+                  id=""
+                  onclick="clearInboxMes(this.name)"
+                  value="Clear Inbox" />
               </td>
             </tr>
           </table>
@@ -116,24 +146,54 @@
             </tr>
             <tr>
               <td>
-                <input type="button" name="" id="" onclick="" value="On/Off" />
-                <input type="button" name="" id="" onclick="" value="Charger" />
+                <input
+                  style="width: 65px"
+                  type="button"
+                  name="iphone"
+                  id=""
+                  onclick="turnMobile(this.name)"
+                  value="On/Off" />
+                <br />
+                <br />
+                <input
+                  style="width: 65px"
+                  type="button"
+                  name="iphone"
+                  id=""
+                  onclick="chargerMobile(this.name)"
+                  value="Charger" />
               </td>
               <td>
                 <input
+                  style="width: 110px"
                   type="button"
-                  name=""
+                  name="iphone"
                   id=""
-                  onclick=""
-                  value="Send Message"
-                />
+                  onclick="sendMes(this.name)"
+                  value="Send Message" />
                 <input
+                  style="width: 110px"
                   type="button"
-                  name=""
+                  name="iphone"
                   id=""
-                  onclick=""
-                  value="Type Message"
-                />
+                  onclick="typeMes(this.name)"
+                  value="Type Message" />
+                <br />
+                <br />
+                <input
+                  style="width: 110px"
+                  type="button"
+                  name="iphone"
+                  id=""
+                  onclick="clearSendMes(this.name)"
+                  value="Clear Outbox " />
+                <input
+                  style="width: 110px"
+                  type="button"
+                  name="iphone"
+                  id=""
+                  onclick="clearInboxMes(this.name)"
+                  value="Clear Inbox" />
               </td>
             </tr>
           </table>
@@ -143,41 +203,86 @@
   </body>
   <script>
     class Mobile {
-      constructor(status, battery, inboxMessage, sendMessage, drafMessage) {
+      constructor(
+        phoneName,
+        status,
+        battery,
+        inboxMessage,
+        sentMessage,
+        drafMessage
+      ) {
+        this.phoneName = phoneName;
         this.status = status;
         this.battery = battery;
         this.inboxMessage = inboxMessage;
-        this.sendMessage = sendMessage;
+        this.sentMessage = sentMessage;
         this.drafMessage = drafMessage;
       }
-      draf(Message) {
+      draf() {
         if (checkStatus(this.status)) {
-          this.drafMessage += Message;
+          // let Message = prompt("Mời bạn nhập nội dung");
+          let Message = addInput();
+          this.drafMessage += Message + " ";
           this.battery--;
         } else alert("Please turn on your Phone");
       }
-      getMessage(Message) {
-        this.inboxMessage = Message;
-        this.battery--;
+      getMessage(mobile) {
+        mobile.inboxMessage += this.drafMessage;
+        mobile.battery--;
       }
       send(mobile) {
         if (checkStatus(this.status)) {
-          mobile.getMessage(Message);
-          this.sendMessage += this.drafMessage;
-          this.drafMessage = "";
-          battery--;
+          if (this.drafMessage) {
+            this.getMessage(mobile);
+            this.sentMessage += this.drafMessage;
+            this.drafMessage = "";
+            this.battery--;
+          } else
+            alert("Your phone: " + this.phoneName + " Draf Message is empty");
         } else alert("Please turn on your Phone");
       }
-      turnOnOff(status) {
-        if (battery > 0) {
+      turnOnOff(mobile) {
+        if (this.battery > 0) {
           if (checkStatus(this.status)) {
             this.status = "OFF";
-          } else this.status = "ON";
+            this.battery--;
+            alert("Turn off: " + this.phoneName);
+          } else {
+            this.status = "ON";
+            this.battery--;
+            alert("Turn on: " + this.phoneName);
+          }
         } else alert("Your phone is low battery. Please Charger!");
       }
-      charger() {
+      charger(mobile) {
         this.battery = 100;
-        alert("Your phone is full battery!");
+        alert("Your phone: " + mobile + " is full battery!");
+      }
+      clearinbox() {
+        if (checkStatus(this.status)) {
+          if (this.inboxMessage) {
+            this.battery--;
+          }
+          this.inboxMessage = "";
+          alert("Your phone: " + this.phoneName + " outbox is empty");
+        } else alert("Please turn on your Phone");
+      }
+      clearoutbox() {
+        if (checkStatus(this.status)) {
+          if (this.sentMessage) {
+            this.battery--;
+          }
+          this.sentMessage = "";
+          alert("Your phone: " + this.phoneName + " outbox is empty");
+        } else alert("Please turn on your Phone");
+      }
+    }
+    function addInput() {
+      let input = prompt("Mời bạn nhập nội dung");
+      while (true) {
+        if (input) {
+          return input;
+        } else return "";
       }
     }
     function checkStatus(status) {
@@ -188,21 +293,69 @@
     function display() {
       //display nokia
       document.getElementById("nokiaInbox").innerHTML = nokia.inboxMessage;
-      document.getElementById("nokiaSent").innerHTML = nokia.sendMessage;
+      document.getElementById("nokiaSent").innerHTML = nokia.sentMessage;
       document.getElementById("nokiaDraf").innerHTML = nokia.drafMessage;
       document.getElementById("nokiaStatus").innerHTML = nokia.status;
       document.getElementById("nokiabattery").innerHTML = nokia.battery + "%";
       // display iphone
       document.getElementById("iphoneInbox").innerHTML = iphone.inboxMessage;
-      document.getElementById("iphoneSent").innerHTML = iphone.sendMessage;
+      document.getElementById("iphoneSent").innerHTML = iphone.sentMessage;
       document.getElementById("iphoneDraf").innerHTML = iphone.drafMessage;
       document.getElementById("iphoneStatus").innerHTML = iphone.status;
       document.getElementById("iphonebattery").innerHTML = iphone.battery + "%";
     }
     ///Interaction between 2 phones
-    var nokia = new Mobile("ON", 100, "", "", "");
-    var iphone = new Mobile("ON", 80, "", "", "");
-
+    var nokia = new Mobile("Nokia", "ON", 100, "", "", "");
+    var iphone = new Mobile("Iphone", "ON", 80, "", "", "");
     display();
+    function turnMobile(mobile) {
+      if (mobile === "nokia") {
+        nokia.turnOnOff(mobile);
+      } else if (mobile === "iphone") {
+        iphone.turnOnOff(mobile);
+      }
+      display();
+    }
+    function chargerMobile(mobile) {
+      if (mobile === "nokia") {
+        nokia.charger(mobile);
+      } else if (mobile === "iphone") {
+        iphone.charger(mobile);
+      }
+      display();
+    }
+    function sendMes(mobile) {
+      if (mobile === "nokia") {
+        nokia.send(iphone);
+      }
+      if (mobile === "iphone") {
+        iphone.send(nokia);
+      }
+      display();
+    }
+    function typeMes(mobile) {
+      if (mobile === "nokia") {
+        nokia.draf();
+      } else if (mobile === "iphone") {
+        iphone.draf();
+      }
+      display();
+    }
+    function clearInboxMes(mobile) {
+      if (mobile === "nokia") {
+        nokia.clearinbox();
+      } else if (mobile === "iphone") {
+        iphone.clearinbox();
+      }
+      display();
+    }
+    function clearSendMes(mobile) {
+      if (mobile === "nokia") {
+        nokia.clearoutbox();
+      } else if (mobile === "iphone") {
+        iphone.clearoutbox();
+      }
+      display();
+    }
   </script>
 </html>
