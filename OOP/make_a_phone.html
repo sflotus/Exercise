@@ -16,6 +16,11 @@
       border: 1px solid;
       border-radius: 3px;
     }
+    .showMess {
+      border: 1px solid;
+      min-height: 50px;
+      width: 200px;
+    }
   </style>
   <body>
     <div class="grid">
@@ -24,26 +29,26 @@
           <table>
             <tr>
               <td>
-                <label for="nokiaInbox">Inbox Message</label>
+                <label for="">Inbox Message</label>
               </td>
               <td>
-                <textarea name="" id="nokiaInbox" cols="30" rows="5"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label for="nokiaSent">Sent Message</label>
-              </td>
-              <td>
-                <textarea name="" id="nokiaSent" cols="30" rows="5"></textarea>
+                <div id="nokiaInbox" class="showMess"></div>
               </td>
             </tr>
             <tr>
               <td>
-                <label for="nokiaDraf">Draf Message</label>
+                <label for="">Sent Message</label>
               </td>
               <td>
-                <textarea name="" id="nokiaDraf" cols="30" rows="5"></textarea>
+                <div id="nokiaSent" class="showMess"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="">Draf Message</label>
+              </td>
+              <td>
+                <div id="nokiaDraf" class="showMess"></div>
               </td>
             </tr>
             <tr>
@@ -62,7 +67,8 @@
                   name="nokia"
                   id=""
                   onclick="turnMobile(this.name)"
-                  value="On/Off" />
+                  value="On/Off"
+                />
                 <br />
                 <br />
                 <input
@@ -71,7 +77,8 @@
                   name="nokia"
                   id=""
                   onclick="chargerMobile(this.name)"
-                  value="Charger" />
+                  value="Charger"
+                />
               </td>
               <td>
                 <input
@@ -80,14 +87,16 @@
                   name="nokia"
                   id=""
                   onclick="sendMes(this.name)"
-                  value="Send Message" />
+                  value="Send Message"
+                />
                 <input
                   style="width: 110px"
                   type="button"
                   name="nokia"
                   id=""
                   onclick="typeMes(this.name)"
-                  value="Type Message" />
+                  value="Type Message"
+                />
                 <br />
                 <br />
                 <input
@@ -96,14 +105,16 @@
                   name="nokia"
                   id=""
                   onclick="clearSendMes(this.name)"
-                  value="Clear Outbox " />
+                  value="Clear Outbox "
+                />
                 <input
                   style="width: 110px"
                   type="button"
                   name="nokia"
                   id=""
                   onclick="clearInboxMes(this.name)"
-                  value="Clear Inbox" />
+                  value="Clear Inbox"
+                />
               </td>
             </tr>
           </table>
@@ -114,26 +125,26 @@
           <table>
             <tr>
               <td>
-                <label for="iphoneInbox">Inbox Message</label>
+                <label for="">Inbox Message</label>
               </td>
               <td>
-                <textarea id="iphoneInbox" cols="30" rows="5"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label for="iphoneSent">Sent Message</label>
-              </td>
-              <td>
-                <textarea name="" id="iphoneSent" cols="30" rows="5"></textarea>
+                <div id="iphoneInbox" class="showMess"></div>
               </td>
             </tr>
             <tr>
               <td>
-                <label for="iphoneDraf">Draf Message</label>
+                <label for="">Sent Message</label>
               </td>
               <td>
-                <textarea name="" id="iphoneDraf" cols="30" rows="5"></textarea>
+                <div id="iphoneSent" class="showMess"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="">Draf Message</label>
+              </td>
+              <td>
+                <div id="iphoneDraf" class="showMess"></div>
               </td>
             </tr>
             <tr>
@@ -152,7 +163,8 @@
                   name="iphone"
                   id=""
                   onclick="turnMobile(this.name)"
-                  value="On/Off" />
+                  value="On/Off"
+                />
                 <br />
                 <br />
                 <input
@@ -161,7 +173,8 @@
                   name="iphone"
                   id=""
                   onclick="chargerMobile(this.name)"
-                  value="Charger" />
+                  value="Charger"
+                />
               </td>
               <td>
                 <input
@@ -170,14 +183,16 @@
                   name="iphone"
                   id=""
                   onclick="sendMes(this.name)"
-                  value="Send Message" />
+                  value="Send Message"
+                />
                 <input
                   style="width: 110px"
                   type="button"
                   name="iphone"
                   id=""
                   onclick="typeMes(this.name)"
-                  value="Type Message" />
+                  value="Type Message"
+                />
                 <br />
                 <br />
                 <input
@@ -186,14 +201,16 @@
                   name="iphone"
                   id=""
                   onclick="clearSendMes(this.name)"
-                  value="Clear Outbox " />
+                  value="Clear Outbox "
+                />
                 <input
                   style="width: 110px"
                   type="button"
                   name="iphone"
                   id=""
                   onclick="clearInboxMes(this.name)"
-                  value="Clear Inbox" />
+                  value="Clear Inbox"
+                />
               </td>
             </tr>
           </table>
@@ -220,9 +237,13 @@
       }
       draf() {
         if (checkStatus(this.status)) {
-          // let Message = prompt("Mời bạn nhập nội dung");
+          if (this.battery < 1) {
+            alert("Your phone has run out battery. Please charger!");
+            this.status = "OFF";
+            return;
+          }
           let Message = addInput();
-          this.drafMessage += Message + " ";
+          this.drafMessage += Message + "<br> ";
           this.battery--;
         } else alert("Please turn on your Phone");
       }
@@ -232,6 +253,11 @@
       }
       send(mobile) {
         if (checkStatus(this.status)) {
+          if (this.battery < 1) {
+            alert("Your phone has run out battery. Please charger!");
+            this.status = "OFF";
+            return;
+          }
           if (this.drafMessage) {
             this.getMessage(mobile);
             this.sentMessage += this.drafMessage;
@@ -260,6 +286,11 @@
       }
       clearinbox() {
         if (checkStatus(this.status)) {
+          if (this.battery < 1) {
+            alert("Your phone has run out battery. Please charger!");
+            this.status = "OFF";
+            return;
+          }
           if (this.inboxMessage) {
             this.battery--;
           }
@@ -269,11 +300,22 @@
       }
       clearoutbox() {
         if (checkStatus(this.status)) {
+          if (this.battery < 1) {
+            alert("Your phone has run out battery. Please charger!");
+            this.status = "OFF";
+            return;
+          }
           if (this.sentMessage) {
+            alert("Your phone: " + this.phoneName + " outbox is empty");
             this.battery--;
+          } else {
+            alert(
+              "Can not clear Draf message because Your phone: " +
+                this.phoneName +
+                " outbox is empty"
+            );
           }
           this.sentMessage = "";
-          alert("Your phone: " + this.phoneName + " outbox is empty");
         } else alert("Please turn on your Phone");
       }
     }
@@ -305,8 +347,10 @@
       document.getElementById("iphonebattery").innerHTML = iphone.battery + "%";
     }
     ///Interaction between 2 phones
-    var nokia = new Mobile("Nokia", "ON", 100, "", "", "");
-    var iphone = new Mobile("Iphone", "ON", 80, "", "", "");
+    let batteryNokia = Math.floor(Math.random() * 100);
+    let batteryIphone = Math.floor(Math.random() * 100);
+    var nokia = new Mobile("Nokia", "ON", batteryNokia, "", "", "");
+    var iphone = new Mobile("Iphone", "ON", batteryIphone, "", "", "");
     display();
     function turnMobile(mobile) {
       if (mobile === "nokia") {
