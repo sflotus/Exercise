@@ -16,37 +16,43 @@
       name=""
       class="btn"
       value="cafe"
-      onclick="run(this.value)" />
+      onclick="run(this.value)"
+    />
     <input
       type="button"
       name=""
       class="btn"
       value="Cam Vắt"
-      onclick="run(this.value)" />
+      onclick="run(this.value)"
+    />
     <input
       type="button"
       name=""
       class="btn"
       value="Nước ép cà-rốt"
-      onclick="run(this.value)" />
+      onclick="run(this.value)"
+    />
     <input
       type="button"
       name=""
       class="btn"
       value="Nước ép cà  chua"
-      onclick="run(this.value)" />
+      onclick="run(this.value)"
+    />
     <input
       type="button"
       name=""
       class="btn"
       value="Nước lọc"
-      onclick="run(this.value)" />
+      onclick="run(this.value)"
+    />
     <input
       type="button"
       name=""
       class="btn"
       value="Nước dừa"
-      onclick="run(this.value)" />
+      onclick="run(this.value)"
+    />
     <br />
     <br />
     <input
@@ -54,7 +60,9 @@
       name=""
       class="btn"
       value="Thanh toán"
-      onclick="cal()" />
+      onclick="cal()"
+    />
+    <div id="info"></div>
     <script>
       var arr = [
         "cafe",
@@ -78,7 +86,7 @@
           )
         );
         while (true) {
-          if (isNaN(input) || !Number.isInteger(input)) {
+          if (!Number.isInteger(input)) {
             alert("Xin nhập giá trị số nguyên");
             input = parseFloat(prompt(`nhập lại số lượng: `));
           } else {
@@ -91,6 +99,15 @@
           if (param == arr[i]) {
             let num = checkInterger(i);
             total += num * unitPrice[i];
+            alert(
+              "Bạn vừa đặt " +
+                num +
+                " " +
+                arr[i] +
+                " đơn giá là : " +
+                unitPrice[i] +
+                "đ"
+            );
             console.log(total);
             break;
           }

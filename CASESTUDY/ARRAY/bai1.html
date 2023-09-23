@@ -14,8 +14,22 @@
     <script>
       var arr = new Array();
       let output = new Array();
+<<<<<<< HEAD
       function run() {
         var inputLength = parseInt(prompt("Nhập vào chiều dài mảng"));
+=======
+      function checkInput() {
+        let input = parseFloat(prompt("Nhập vào chiều dài mảng"));
+        while (true) {
+          if (!Number.isInteger(input)) {
+            alert("Vui lòng nhập giá trị nguyên");
+            input = parseFloat(prompt("Nhập lại chiều dài mảng"));
+          } else return input;
+        }
+      }
+      function run() {
+        var inputLength = checkInput();
+>>>>>>> e6fa0cf6c25b65d480a555b514940a197a1e2bbe
         for (let i = 0; i < inputLength; i++) {
           arr[i] = parseFloat(prompt("Nhập vào phần tử: " + (i + 1)));
         }

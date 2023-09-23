@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <center>
-        <input type="button" name="" id="" value="Bắt đầu" onclick="run()">
+      <input type="button" name="" id="" value="Bắt đầu" onclick="run()" />
     </center>
-<script>
-    function commonCharacterCount(s1, s2) {
-    let amount = 0;
-    const arr1 = s1.split('');
-    const arr2 = s2.split('');
-    for (let i = 0; i < arr1.length; i++) {
-        const index = arr1[i]
-        for ( let j = 0 ; j < arr2.length; j++){
+    <script>
+      function commonCharacterCount(s1, s2) {
+        let amount = 0;
+        const arr1 = s1.split("");
+        const arr2 = s2.split("");
+        for (let i = 0; i < arr1.length; i++) {
+          const index = arr1[i];
+          for (let j = 0; j < arr2.length; j++) {
             if (arr1[i] == arr2[j]) {
-            arr2.splice(index, 1);
-            amount += 1
+              arr2.splice(index, 1);
+              amount += 1;
+            }
+          }
         }
-        }
-        
-    }
-    return amount
-}
-    function run(){
-        let stringA = prompt("Mời bạn nhập vào dãy ký tự A")
-        document.write("Dãy A bạn vừa nhập là: " + stringA +"<br>")
-        let stringB = prompt("Mời bạn nhập vào dãy ký tự B")
-        document.write("Dãy B bạn vừa nhập là: " + stringB +"<br>")
-        document.write("Số ký tự chung là: " + commonCharacterCount(stringA,stringB))
-    }
-
-</script>
-</body>
+        return amount;
+      }
+      function run() {
+        let stringA = prompt("Mời bạn nhập vào dãy ký tự A");
+        document.write("Dãy A bạn vừa nhập là: " + stringA + "<br>");
+        let stringB = prompt("Mời bạn nhập vào dãy ký tự B");
+        document.write("Dãy B bạn vừa nhập là: " + stringB + "<br>");
+        document.write(
+          "Số ký tự chung là: " + commonCharacterCount(stringA, stringB)
+        );
+      }
+    </script>
+  </body>
 </html>

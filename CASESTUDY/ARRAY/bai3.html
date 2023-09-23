@@ -1,46 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <center>
-        <input type="button" value="Bắt đầu" name="" id="" onclick="run()">
-        <p id="resultA"></p>
-        <p id="resultB"></p>
-        <p id="resultOUTPUT"></p>
+      <input type="button" value="Bắt đầu" name="" id="" onclick="run()" />
+      <p id="resultA"></p>
+      <p id="resultB"></p>
+      <p id="resultOUTPUT"></p>
     </center>
-<script>
-    function maxFraction(numerators, denominators) {
+    <script>
+      function checkInput() {
+        let input = parseFloat(prompt("Nhập vào chiều dài mảng"));
+        while (true) {
+          if (!Number.isInteger(input)) {
+            alert("Vui lòng nhập giá trị nguyên");
+            input = parseFloat(prompt("Nhập lại chiều dài mảng"));
+          } else return input;
+        }
+      }
+      function maxFraction(numerators, denominators) {
         var length = numerators.length;
         var result = 0;
-        var max = numerators[0] / denominators[0]
+        var max = numerators[0] / denominators[0];
         for (let i = 0; i < length; i++) {
-                if (numerators[i] / denominators[i] > max) {
-                result = i;
-                max = numerators[i] / denominators[i];
-            }
+          if (numerators[i] / denominators[i] > max) {
+            result = i;
+            max = numerators[i] / denominators[i];
+          }
         }
         return result;
-    }
-    function addArr(x){
+      }
+      function addArr(x, y) {
         let arr = new Array();
         for (let i = 0; i < x; i++) {
-            arr[i] =parseFloat(prompt("Nhập vào phần tử: "+(i+1)))
+          let input = parseFloat(
+            prompt("Nhập vào phần tử: " + (i + 1) + "  của mảng " + y)
+          );
+          while (!Number.isInteger(input)) {
+            alert("Vui lòng nhập giá trị nguyên");
+            input = parseFloat(prompt("Nhập lại:"));
+          }
+          arr[i] = input;
         }
         return arr;
-    }
-    function run(){
-        var lengthArr = parseInt(prompt("Nhập vào chiều dài mảng A và B"));
-        var  arrA =  addArr(lengthArr);
-        document.getElementById("resultA").innerHTML = "Mảng A bạn vừa nhập là:" +arrA;
-        var  arrB =  addArr(lengthArr);
-        document.getElementById("resultB").innerHTML = "Mảng B bạn vừa nhập là:" +arrB;
+      }
+      function run() {
+        var lengthArr = checkInput();
+        var arrA = addArr(lengthArr, "A");
+        document.getElementById("resultA").innerHTML =
+          "Mảng A bạn vừa nhập là:" + arrA;
+        var arrB = addArr(lengthArr, "B");
+        document.getElementById("resultB").innerHTML =
+          "Mảng B bạn vừa nhập là:" + arrB;
         console.log(arrA, arrB);
-        document.getElementById("resultOUTPUT").innerHTML = "Kết quả: " +maxFraction(arrA,arrB);
-    }
-</script>
-</body>
+        document.getElementById("resultOUTPUT").innerHTML =
+          "Kết quả: vị trí " +
+          maxFraction(arrA, arrB) +
+          " có giá trị phân số lớn nhất";
+      }
+    </script>
+  </body>
 </html>

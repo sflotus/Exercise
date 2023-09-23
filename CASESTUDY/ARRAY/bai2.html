@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <center>
-        <input type="button" value="Bắt đầu" name="" id="" onclick="run()">
-        <p id="resultA"></p>
-        <p id="resultB"></p>
-        <p id="resultOUTPUT"></p>
+      <input type="button" value="Bắt đầu" name="" id="" onclick="run()" />
+      <p id="resultA"></p>
+      <p id="resultB"></p>
+      <p id="resultOUTPUT"></p>
     </center>
-<script>
-       function run(){
-            let arrA = new Array();
-            let arrB = new Array();
-            let output =new Array();
-            var lengthA = parseInt(prompt("Nhập vào chiều dài mảng A"));
-            for (let i = 0; i < lengthA; i++) {
-                 arrA[i] =parseFloat(prompt("Nhập vào phần tử "+(i+1)+ " của mảng A"));
-            }
-            document.getElementById("resultA").innerHTML = "Mảng A bạn vừa nhập là:" +arrA;
-            var lengthB = parseInt(prompt("Nhập vào chiều dài mảng B"));
-            for (let i = 0; i < lengthB; i++) {
-                arrB[i] =parseFloat(prompt("Nhập vào phần tử "+(i+1)+ " của mảng B"));
-            }
-            document.getElementById("resultB").innerHTML = "Mảng B bạn vừa nhập là:" +arrB;
-            for (let i = 0;i < arrA.length; i++){
-                for ( let j =0; j < arrB.length; j++){
-                    if (arrA[i] == arrB[j]){
-                        arrB.splice(j,1);
-                    }
-                }
-            }
-            console.log(arrB);
-            arrB.sort();
-            console.log("arrB:"+arrB);
-            for (i = 0; i < arrB.length; i++){
-                if (arrB[i] == arrB[i+1]){
-                    continue;
-                } else output.push(arrB[i]);
-            }
-            console.log("output: " +output);
-            document.getElementById("resultOUTPUT").innerHTML = "Kết quả:" +output;
+    <script>
+      function checkInput(param) {
+        let input = parseFloat(prompt("Nhập vào chiều dài mảng " + param));
+        while (true) {
+          if (!Number.isInteger(input)) {
+            alert("Vui lòng nhập giá trị nguyên");
+            input = parseFloat(prompt("Nhập lại chiều dài mảng"));
+          } else return input;
         }
-</script>
-</body>
+      }
+      function run() {
+        let arrA = new Array();
+        let arrB = new Array();
+        let output = new Array();
+        var lengthA = checkInput("A");
+        for (let i = 0; i < lengthA; i++) {
+          arrA[i] = parseFloat(
+            prompt("Nhập vào phần tử " + (i + 1) + " của mảng A")
+          );
+        }
+        document.getElementById("resultA").innerHTML =
+          "Mảng A bạn vừa nhập là:" + arrA;
+        var lengthB = checkInput("B");
+        for (let i = 0; i < lengthB; i++) {
+          arrB[i] = parseFloat(
+            prompt("Nhập vào phần tử " + (i + 1) + " của mảng B")
+          );
+        }
+        document.getElementById("resultB").innerHTML =
+          "Mảng B bạn vừa nhập là:" + arrB;
+        for (let i = 0; i < arrA.length; i++) {
+          for (let j = 0; j < arrB.length; j++) {
+            if (arrA[i] == arrB[j]) {
+              arrB.splice(j, 1);
+            }
+          }
+        }
+        console.log(arrB);
+        arrB.sort();
+        console.log("arrB:" + arrB);
+        for (i = 0; i < arrB.length; i++) {
+          if (arrB[i] == arrB[i + 1]) {
+            continue;
+          } else output.push(arrB[i]);
+        }
+        console.log("output: " + output);
+        document.getElementById("resultOUTPUT").innerHTML = "Kết quả:" + output;
+      }
+    </script>
+  </body>
 </html>
