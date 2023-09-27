@@ -12,17 +12,36 @@
     <script>
       function commonCharacterCount(s1, s2) {
         let amount = 0;
-        const arr1 = s1.split("");
-        const arr2 = s2.split("");
+        let temp = [];
+        let arr1 = s1.split("");
+        let arr2 = s2.split("");
         for (let i = 0; i < arr1.length; i++) {
-          const index = arr1[i];
           for (let j = 0; j < arr2.length; j++) {
             if (arr1[i] == arr2[j]) {
-              arr2.splice(index, 1);
-              amount += 1;
+              temp.push(arr1[i]);
+              arr2.splice(j, 1);
+              amount++;
+              break;
             }
           }
         }
+        temp.sort();
+        for (let i = 0; i < temp.length; i++) {
+          let count = 0;
+          if (temp[i - 1] == temp[i]) {
+            continue;
+          } else {
+            for (let j = i; j < temp.length; j++) {
+              if (temp[i] == temp[j]) {
+                count++;
+              }
+            }
+          }
+          document.write(
+            "Ký tự: " + temp[i] + " Số lần lặp: " + count + "<br>"
+          );
+        }
+        console.log(temp);
         return amount;
       }
       function run() {
