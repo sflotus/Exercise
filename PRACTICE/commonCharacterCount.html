@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <input type="button" name="" id="" value="Bắt đầu" onclick="run()" />
+    </center>
+    <script>
+      function commonCharacterCount(s1, s2) {
+        let amount = 0;
+        let temp = [];
+        let arr1 = s1.split("");
+        let arr2 = s2.split("");
+        for (let i = 0; i < arr1.length; i++) {
+          for (let j = 0; j < arr2.length; j++) {
+            if (arr1[i] == arr2[j]) {
+              temp.push(arr1[i]);
+              arr2.splice(j, 1);
+              amount++;
+              break;
+            }
+          }
+        }
+        temp.sort();
+        for (let i = 0; i < temp.length; i++) {
+          let count = 0;
+          if (temp[i - 1] == temp[i]) {
+            continue;
+          } else {
+            for (let j = i; j < temp.length; j++) {
+              if (temp[i] == temp[j]) {
+                count++;
+              }
+            }
+          }
+          document.write(
+            "Ký tự: " + temp[i] + " Số lần lặp: " + count + "<br>"
+          );
+        }
+        console.log(temp);
+        return amount;
+      }
+      function run() {
+        let stringA = prompt("Mời bạn nhập vào dãy ký tự A");
+        document.write("Dãy A bạn vừa nhập là: " + stringA + "<br>");
+        let stringB = prompt("Mời bạn nhập vào dãy ký tự B");
+        document.write("Dãy B bạn vừa nhập là: " + stringB + "<br>");
+        document.write(
+          "Số ký tự chung là: " + commonCharacterCount(stringA, stringB)
+        );
+      }
+    </script>
+  </body>
+</html>

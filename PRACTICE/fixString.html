@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" onclick="run()" value="Kiểm tra" name="" id="" />
+    <script>
+      function amendTheSentence(inputString) {
+        let inputArr = inputString.split("");
+        let output = [];
+        for (let i = 0; i < inputArr.length; i++) {
+          if (inputArr[i] < "a") {
+            output.push(" ");
+            output.push(inputArr[i].toLowerCase());
+          } else {
+            output.push(inputArr[i]);
+          }
+        }
+        return output;
+      }
+      function run() {
+        let inputString = prompt("Mời bạn nhập xâu ký tự lỗi");
+        alert(amendTheSentence(inputString).join(""));
+      }
+    </script>
+  </body>
+</html>

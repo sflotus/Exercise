@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" name="" id="" onclick="run()" value="Kiểm tra" />
+    <script>
+      function isBeautifullArr(inputString) {
+        let inputArr = inputString.split(",");
+        console.log(inputArr.length);
+        console.log(inputArr.length);
+
+        let index = 0;
+        while (index < inputArr.length) {
+          let sumLeft = 0;
+          let sumRight = 0;
+          for (let i = 0; i < index; i++) {
+            sumLeft += parseInt(inputArr[i]);
+          }
+          for (let i = inputArr.length - 1; i > index; i--) {
+            sumRight += parseInt(inputArr[i]);
+          }
+          console.log(sumLeft);
+          console.log(sumRight);
+          if (sumLeft === sumRight) {
+            return true;
+          }
+          index++;
+        }
+        return false;
+      }
+      function run() {
+        let input = prompt(`Mời bạn nhập số phần tử`);
+        alert(isBeautifullArr(input));
+      }
+    </script>
+  </body>
+</html>
