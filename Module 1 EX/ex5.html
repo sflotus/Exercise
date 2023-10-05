@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" onclick="run()" value="Kiểm tra" />
+    <script>
+      function checkCouple(arr) {
+        for (let i = 0; i < arr.length - 1; i = i + 2) {
+          if (arr[i] > arr[i + 1]) {
+            return false;
+          }
+        }
+        return true;
+      }
+      function checkInput() {
+        let input = parseInt(prompt(`Mời bạn nhập chiều dài mãng`));
+        while (true) {
+          if (isNaN(input) || input % 2 != 0 || input <= 0) {
+            alert(`Vui lòng Nhập giá trị nguyên dương`);
+            input = parseInt(prompt(`Mời bạn nhập lại`));
+          } else return input;
+        }
+      }
+      function run() {
+        let inputNum = checkInput();
+        let arr = new Array();
+        for (let i = 0; i < inputNum; i++) {
+          arr[i] = parseInt(prompt(`mời bạn nhập giá trị ${i + 1} :`));
+        }
+        document.write(`Mảng bạn vừa nhập là :${arr}`);
+        if (checkCouple(arr)) {
+          alert(`OK`);
+        } else alert(`NO`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" onclick="run()" value="Kiểm tra" name="" id="" />
+    <script>
+      function checkArrray(arr) {
+        for (let i = 0; i < arr.length / 2; i++) {
+          if (arr[i] * arr[i] != arr[arr.length / 2 + i]) {
+            return false;
+          }
+        }
+        return true;
+      }
+      function run() {
+        let inputNum = parseInt(prompt(`Mời bạn nhập số phần tử của mãng`));
+        let arr = new Array();
+        for (let i = 0; i < inputNum; i++) {
+          arr[i] = parseInt(prompt(`Mời bạn nhập giá trị ${i + 1}`));
+        }
+        console.log(arr);
+        alert(checkArrray(arr));
+      }
+    </script>
+  </body>
+</html>

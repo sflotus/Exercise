@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" onclick="run()" value="Kiểm Tra" name="" id="" />
+    <script>
+      function check(input) {
+        let output = [];
+        for (let i = 0; i < input.length; i++) {
+          switch (input[i]) {
+            case "o":
+            case "u":
+            case "i":
+            case "a":
+            case "e":
+            case "O":
+            case "U":
+            case "I":
+            case "A":
+            case "E": {
+              output.push(input[i]);
+              break;
+            }
+          }
+        }
+        return output;
+      }
+      function run() {
+        let input = prompt(`Mời bạn nhập chuỗi ký tự`);
+        alert(check(input));
+      }
+    </script>
+  </body>
+</html>

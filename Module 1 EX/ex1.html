@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="Kiểm tra" onclick="run()" id="" />
+    <script>
+      function checkEven(arr) {
+        let countEven = 0;
+        let countNotEvent = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] % 2 == 0) {
+            countEven++;
+          } else countNotEvent++;
+        }
+        console.log(countEven);
+        console.log(countNotEvent);
+        if (countEven == countNotEvent) {
+          return true;
+        } else return false;
+      }
+      function run() {
+        let inputNum = parseInt(prompt(`Mời bạn nhập chiều dài mãng`));
+        let arr = new Array();
+        for (let i = 0; i < inputNum; i++) {
+          arr[i] = parseInt(prompt(`mời bạn nhập giá trị ${i + 1} :`));
+        }
+        document.write(`Mảng bạn vừa nhập là :${arr}`);
+        console.log(checkEven(arr));
+        if (checkEven(arr)) {
+          alert(`OK`);
+        } else alert(`NO`);
+      }
+    </script>
+  </body>
+</html>

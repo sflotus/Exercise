@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" onclick="run()" value="Kiểm tra" />
+    <script>
+      function checkString(inputString) {
+        let countLower = 0;
+        let countUper = 0;
+        for (let i = 0; i < inputString.length; i++) {
+          if (inputString[i] <= "z" && inputString[i] >= "a") {
+            countLower++;
+          } else if (inputString[i] <= "Z" && inputString[i] >= "A") {
+            countUper++;
+          }
+        }
+        if (countLower == countUper) {
+          return true;
+        } else return false;
+      }
+      function run() {
+        let input = prompt(`Mời bạn nhập chuổi ký tự cần kiểm tra`);
+        alert(checkString(input));
+      }
+    </script>
+  </body>
+</html>
