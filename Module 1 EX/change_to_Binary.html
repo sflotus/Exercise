@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <input type="button" onclick="run()" value="Kiểm tra" name="" id="">
+  </head>
+  <body>
+    <input type="button" onclick="run()" value="Kiểm tra" name="" id="" />
     <script>
-        function changeBinary(input){
-            let output =""
-            do{
-                output = input%2 +output
-                input= Math.floor(input/2)
-            }
-            while(input>0)
-            return output
-        }
-        function run(){
-            let input=parseInt(prompt(`Mời bạn nhập giá trị nguyên cần chuyển đổi`))
-            document.write(`Số bạn vừa nhập: ${input} <br>` )
-            document.write(`kết quả:` + changeBinary(input))
-            
-        }
+      function changeBinary(input) {
+        let output = "";
+        do {
+          output = (input % 2) + output;
+          input = Math.floor(input / 2);
+        } while (input > 0);
+        return output;
+      }
+      function run() {
+        let input = parseInt(
+          prompt(`Mời bạn nhập giá trị nguyên cần chuyển đổi`)
+        );
+        document.write(`Số bạn vừa nhập: ${input} <br>`);
+        document.write(`kết quả:` + changeBinary(input));
+      }
     </script>
-</body>
+  </body>
 </html>

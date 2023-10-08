@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <input type="button" onclick="run()" value="Kiểm Tra" name="" id="">
+  </head>
+  <body>
+    <input type="button" onclick="run()" value="Kiểm Tra" name="" id="" />
     <script>
-        function checkPrimeArr(arr){
-            for(let i = 0;i<arr.length;i++){
-                if(arr[i] <2 || isNaN(arr[i])) {
+      function checkPrimeArr(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] < 2 || isNaN(arr[i])) {
             return false;
-            } else {
-                for(let j = 2; j<= Math.sqrt(arr[i]) ; j++) {
-                    if(arr[i] %j ==0) {
-                        return false;
-                    }   
-                }
+          } else {
+            for (let j = 2; j <= Math.sqrt(arr[i]); j++) {
+              if (arr[i] % j == 0) {
+                return false;
+              }
             }
-            }
-            return true;
+          }
         }
-        function run(){
+        return true;
+      }
+      function run() {
         let inputNum = parseInt(prompt(`Mời bạn nhập  số phần tử`));
         let arr = new Array();
         for (let i = 0; i < inputNum; i++) {
           arr[i] = parseInt(prompt(`mời bạn nhập giá trị ${i + 1} :`));
         }
         document.write(`Mảng bạn vừa nhập là :${arr}`);
-        alert(checkPrimeArr(arr))
-        }
+        alert(checkPrimeArr(arr));
+      }
     </script>
-</body>
+  </body>
 </html>

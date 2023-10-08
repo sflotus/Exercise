@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <input type="button" onclick="run()" value="Kiểm tra" name="" id="">
+  </head>
+  <body>
+    <input type="button" onclick="run()" value="Kiểm tra" name="" id="" />
     <script>
-        function checkString(inputSting){
-            let temp=inputSting.split("")
-            console.log(temp)
-            let output =""
-            for ( let i =0; i<temp.length;i++){
-                if((temp[i]<'0'||temp[i]>'9')&&(temp[i]<'a'||temp[i]>'z')&&(temp[i]<'A'||temp[i]>'Z')){
-                    output+=temp[i]
-                }
-            }
-            console.log(output)
-            return output
+      function checkString(inputSting) {
+        let temp = inputSting.split("");
+        console.log(temp);
+        let output = "";
+        for (let i = 0; i < temp.length; i++) {
+          if (
+            (temp[i] < "0" || temp[i] > "9") &&
+            (temp[i] < "a" || temp[i] > "z") &&
+            (temp[i] < "A" || temp[i] > "Z")
+          ) {
+            output += temp[i];
+          }
         }
-        function run(){
-            let inputSting = prompt(`Mời bạn nhập chuổi ký tự`)
-            let result = checkString(inputSting)
-            document.write(`Chuỗi ký tự bạn vừa nhập là: ${inputSting} <br>`)
-            document.write(`Chuổi ký tự sau khi xử lý: ${result}`)
-        }
+        console.log(output);
+        return output;
+      }
+      function run() {
+        let inputSting = prompt(`Mời bạn nhập chuổi ký tự`);
+        let result = checkString(inputSting);
+        document.write(`Chuỗi ký tự bạn vừa nhập là: ${inputSting} <br>`);
+        document.write(`Chuổi ký tự sau khi xử lý: ${result}`);
+      }
     </script>
-</body>
+  </body>
 </html>
