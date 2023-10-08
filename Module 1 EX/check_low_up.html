@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="run()" value="Kiểm Tra" name="" id="">
+    <script>
+        function checkLowerUpper(input){
+            let countLow =0
+            let countUp=0
+            for( let i = 0; i < input.length;i++){
+                if(input[i] >='a' && input[i] <='z'){
+                    countLow ++
+                } else if(input[i] >='A' && input[i] <='Z'){
+                    countUp++
+                }
+            }
+            if( countLow === countUp){
+                return true
+            } else return false
+        }
+        function run(){
+            let input = prompt(`Mời bạn nhập chuỗi ký tự cần kiểm tra`)
+            document.write(`Chuổi bạn vừa nhập là :${input}`)
+            alert(checkLowerUpper(input))
+        }
+    </script>
+</body>
+</html>
