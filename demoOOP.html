@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse
+        }
+    </style>
+</head>
+<body>
+    <input type="button" onclick="addProduct()" value="Thêm mới " name="" id="">
+    <div id="content"></div>
+    <script>
+        class Procuct{
+            constructor(id,name,price, detail){
+                this.id=id
+                this.name=name
+                this.price = price
+                this.detail = detail
+            }
+            setID(newID){
+                this.id = newID
+            }
+            setName(newName){
+                this.name= newName
+            }
+            setPrice(newPrice){
+                this.price = newPrice
+            }
+            setDetail(newDetail){
+                this.detail=newDetail
+            }
+        }
+        let products=[]
+        function display(){
+            let data =""
+            data +="<table border='1px' width='500px'>"+
+                "<tr>"+
+                "<th>Mã Sản Phẩm</th>"+
+                "<th>Tên Sản Phẩm</th>"+
+                "<th>Giá Sản Phẩm</th>" +
+                "<th>Miêu Tả</th>" +
+                "</tr>"
+            "</table>"
+            for ( let index of products){
+                data += "<tr>"+
+                    "<td>" +index.id+"</td>"+
+                    "<td>" +index.name+"</td>"+
+                    "<td>" +index.price+"</td>"+
+                    "<td>" + index.detail + "</td>"+
+                    "</tr>"
+            }
+            document.getElementById("content").innerHTML=data
+        }
+        display()
+        function addProduct(){
+            let id = prompt(`Mời bạn nhập ID`)
+            let name = parseInt(prompt(`Mời bạn nhập tên sản phẩm`))
+            let price = prompt(`Mời bạn nhập giá sản phẩm`)
+            let detail = prompt(`Mời bạn nhập mô tả`)
+            let product = new Procuct(id, name, price, detail)
+            products.push(product)
+            display()
+        }
+    </script>
+</body>
+</html>
